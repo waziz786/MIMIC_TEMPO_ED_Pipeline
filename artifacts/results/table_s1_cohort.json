@@ -1,0 +1,110 @@
+{
+  "cohort": {
+    "n_ed_visits": 424385,
+    "n_unique_patients": 205080,
+    "median_age_iqr": "53.0 [35.0\u201369.0]",
+    "pct_female": 54.1,
+    "pct_admitted": 47.8,
+    "median_ed_los_h": "5.5 [3.5\u20138.3]"
+  },
+  "outcomes": {
+    "deterioration_24h (all)": {
+      "n": 424385,
+      "n_pos": 17197,
+      "prevalence_pct": 4.05
+    },
+    "icu_24h (admitted)": {
+      "n": 202758,
+      "n_pos": 10545,
+      "prevalence_pct": 5.2
+    },
+    "death_24h (admitted)": {
+      "n": 202758,
+      "n_pos": 520,
+      "prevalence_pct": 0.26
+    },
+    "vent_24h (admitted)": {
+      "n": 202758,
+      "n_pos": 3403,
+      "prevalence_pct": 1.68
+    },
+    "pressor_24h (admitted)": {
+      "n": 202758,
+      "n_pos": 3558,
+      "prevalence_pct": 1.75
+    },
+    "cardiac_arrest_hosp (admitted)": {
+      "n": 202758,
+      "n_pos": 474,
+      "prevalence_pct": 0.23
+    },
+    "acs_hosp (admitted)": {
+      "n": 202758,
+      "n_pos": 6171,
+      "prevalence_pct": 3.04
+    },
+    "deterioration_24h (admitted)": {
+      "n": 202758,
+      "n_pos": 17197,
+      "prevalence_pct": 8.48
+    }
+  },
+  "ecg_coverage": {
+    "cohort_n": 202758,
+    "has_ecg": "95,294 (47.0%)",
+    "within_1h": "73,034 (36.0%)",
+    "within_6h": "95,294 (47.0%)"
+  },
+  "feature_availability_6h": {
+    "sbp_min_6h": 92.1,
+    "hr_min_6h": 92.2,
+    "lactate_first_6h": 3.9,
+    "troponin_first_6h": 0.7,
+    "creatinine_first_6h": 8.0,
+    "wbc_first_6h": 8.1,
+    "hemoglobin_first_6h": 8.0,
+    "platelet_first_6h": 8.0
+  },
+  "race": {
+    "WHITE": 227778,
+    "BLACK/AFRICAN AMERICAN": 76712,
+    "OTHER": 20720,
+    "HISPANIC/LATINO - PUERTO RICAN": 14026,
+    "WHITE - OTHER EUROPEAN": 8984,
+    "HISPANIC/LATINO - DOMINICAN": 8327,
+    "BLACK/CAPE VERDEAN": 7631,
+    "ASIAN - CHINESE": 7340,
+    "ASIAN": 7287,
+    "UNKNOWN": 6953,
+    "WHITE - RUSSIAN": 6073,
+    "BLACK/AFRICAN": 4884,
+    "BLACK/CARIBBEAN ISLAND": 3671,
+    "HISPANIC OR LATINO": 3139,
+    "HISPANIC/LATINO - GUATEMALAN": 2351,
+    "ASIAN - ASIAN INDIAN": 1561,
+    "ASIAN - SOUTH EAST ASIAN": 1530,
+    "HISPANIC/LATINO - SALVADORAN": 1497,
+    "WHITE - BRAZILIAN": 1484,
+    "PORTUGUESE": 1454,
+    "WHITE - EASTERN EUROPEAN": 1308,
+    "HISPANIC/LATINO - COLUMBIAN": 1306,
+    "HISPANIC/LATINO - MEXICAN": 1260,
+    "SOUTH AMERICAN": 1062,
+    "AMERICAN INDIAN/ALASKA NATIVE": 1035,
+    "HISPANIC/LATINO - HONDURAN": 1005,
+    "HISPANIC/LATINO - CUBAN": 789,
+    "ASIAN - KOREAN": 786,
+    "HISPANIC/LATINO - CENTRAL AMERICAN": 786,
+    "PATIENT DECLINED TO ANSWER": 624,
+    "NATIVE HAWAIIAN OR OTHER PACIFIC ISLANDER": 505,
+    "MULTIPLE RACE/ETHNICITY": 280,
+    "UNABLE TO OBTAIN": 237
+  },
+  "arrival_transport": {
+    "WALK IN": 251769,
+    "AMBULANCE": 155293,
+    "UNKNOWN": 15213,
+    "OTHER": 1265,
+    "HELICOPTER": 845
+  }
+}

@@ -1,0 +1,24 @@
+Characteristic,Value
+N ED visits,"424,385"
+Unique patients,"205,080"
+"Age, median [IQR]",53.0 [35.0–69.0]
+"Female, %",54.1%
+"Admitted, %",47.8%
+"ED LOS (h), median [IQR]",5.5 [3.5–8.3]
+deterioration_24h (all),"17,197 (4.05%)"
+icu_24h (admitted),"10,545 (5.20%)"
+death_24h (admitted),520 (0.26%)
+vent_24h (admitted),"3,403 (1.68%)"
+pressor_24h (admitted),"3,558 (1.75%)"
+rrt_24h (admitted),"10,966 (5.41%)"
+cardiac_arrest_hosp (admitted),474 (0.23%)
+acs_hosp (admitted),"6,171 (3.04%)"
+deterioration_24h (admitted),"17,197 (8.48%)"
+sbp_min_6h available,92.1%
+hr_min_6h available,92.2%
+lactate_first_6h available,3.9%
+troponin_first_6h available,0.7%
+creatinine_first_6h available,8.0%
+wbc_first_6h available,8.1%
+hemoglobin_first_6h available,8.0%
+platelet_first_6h available,8.0%

@@ -1,0 +1,1894 @@
+{
+  "generated_at": "2026-02-05T18:34:17.099967",
+  "dataset_name": "w6_w24_multi_mortality",
+  "basic_info": {
+    "n_rows": 202990,
+    "n_columns": 115,
+    "memory_mb": 819.26,
+    "columns": [
+      "stay_id",
+      "subject_id",
+      "hadm_id",
+      "ed_intime",
+      "ed_outtime",
+      "age_at_ed",
+      "gender",
+      "ed_los_hours",
+      "arrival_transport",
+      "race",
+      "sbp_min_6h",
+      "sbp_max_6h",
+      "sbp_mean_6h",
+      "sbp_std_6h",
+      "dbp_min_6h",
+      "hr_min_6h",
+      "hr_max_6h",
+      "hr_mean_6h",
+      "hr_std_6h",
+      "rr_max_6h",
+      "rr_mean_6h",
+      "spo2_min_6h",
+      "spo2_mean_6h",
+      "temp_max_6h",
+      "temp_min_6h",
+      "n_vitalsign_measurements_6h",
+      "chiefcomplaint",
+      "lactate_first_6h",
+      "troponin_first_6h",
+      "is_hs_troponin_6h",
+      "creatinine_first_6h",
+      "potassium_first_6h",
+      "sodium_first_6h",
+      "bicarbonate_first_6h",
+      "wbc_first_6h",
+      "hemoglobin_first_6h",
+      "platelet_first_6h",
+      "time_to_first_lab_hours",
+      "time_to_first_med_hours",
+      "prev_admits_1yr",
+      "prev_ed_visits_1yr",
+      "sbp_cv_6h",
+      "hr_range_6h",
+      "missing_lactate_6h",
+      "missing_troponin_6h",
+      "sbp_min_24h",
+      "sbp_max_24h",
+      "sbp_mean_24h",
+      "sbp_std_24h",
+      "hr_min_24h",
+      "hr_max_24h",
+      "hr_mean_24h",
+      "rr_max_24h",
+      "rr_mean_24h",
+      "spo2_min_24h",
+      "spo2_mean_24h",
+      "temp_max_24h",
+      "n_vitalsign_measurements_24h",
+      "lactate_first_24h",
+      "troponin_first_24h",
+      "is_hs_troponin_24h",
+      "creatinine_first_24h",
+      "potassium_first_24h",
+      "sodium_first_24h",
+      "bicarbonate_first_24h",
+      "wbc_first_24h",
+      "hemoglobin_first_24h",
+      "platelet_first_24h",
+      "glucose_first_24h",
+      "bun_first_24h",
+      "bilirubin_first_24h",
+      "inr_first_24h",
+      "lactate_max_24h",
+      "creatinine_max_24h",
+      "bun_creatinine_ratio",
+      "lactate_delta_24h",
+      "y_death_24h",
+      "y_death_48h",
+      "y_death_hosp",
+      "missing_sbp_std_6h",
+      "missing_hr_std_6h",
+      "missing_temp_max_6h",
+      "missing_temp_min_6h",
+      "missing_lactate_first_6h",
+      "missing_troponin_first_6h",
+      "missing_is_hs_troponin_6h",
+      "missing_creatinine_first_6h",
+      "missing_potassium_first_6h",
+      "missing_sodium_first_6h",
+      "missing_bicarbonate_first_6h",
+      "missing_wbc_first_6h",
+      "missing_hemoglobin_first_6h",
+      "missing_platelet_first_6h",
+      "missing_time_to_first_lab_hours",
+      "missing_time_to_first_med_hours",
+      "missing_sbp_cv_6h",
+      "missing_sbp_std_24h",
+      "missing_lactate_first_24h",
+      "missing_troponin_first_24h",
+      "missing_is_hs_troponin_24h",
+      "missing_creatinine_first_24h",
+      "missing_potassium_first_24h",
+      "missing_sodium_first_24h",
+      "missing_bicarbonate_first_24h",
+      "missing_wbc_first_24h",
+      "missing_hemoglobin_first_24h",
+      "missing_platelet_first_24h",
+      "missing_glucose_first_24h",
+      "missing_bun_first_24h",
+      "missing_bilirubin_first_24h",
+      "missing_inr_first_24h",
+      "missing_lactate_max_24h",
+      "missing_creatinine_max_24h",
+      "missing_bun_creatinine_ratio",
+      "missing_lactate_delta_24h"
+    ],
+    "dtypes": {
+      "stay_id": "int64",
+      "subject_id": "int64",
+      "hadm_id": "int64",
+      "ed_intime": "datetime64[ns]",
+      "ed_outtime": "datetime64[ns]",
+      "age_at_ed": "object",
+      "gender": "object",
+      "ed_los_hours": "object",
+      "arrival_transport": "object",
+      "race": "object",
+      "sbp_min_6h": "float64",
+      "sbp_max_6h": "float64",
+      "sbp_mean_6h": "object",
+      "sbp_std_6h": "object",
+      "dbp_min_6h": "float64",
+      "hr_min_6h": "object",
+      "hr_max_6h": "object",
+      "hr_mean_6h": "object",
+      "hr_std_6h": "object",
+      "rr_max_6h": "object",
+      "rr_mean_6h": "object",
+      "spo2_min_6h": "object",
+      "spo2_mean_6h": "object",
+      "temp_max_6h": "object",
+      "temp_min_6h": "object",
+      "n_vitalsign_measurements_6h": "int64",
+      "chiefcomplaint": "object",
+      "lactate_first_6h": "float64",
+      "troponin_first_6h": "float64",
+      "is_hs_troponin_6h": "float64",
+      "creatinine_first_6h": "float64",
+      "potassium_first_6h": "float64",
+      "sodium_first_6h": "float64",
+      "bicarbonate_first_6h": "float64",
+      "wbc_first_6h": "float64",
+      "hemoglobin_first_6h": "float64",
+      "platelet_first_6h": "float64",
+      "time_to_first_lab_hours": "object",
+      "time_to_first_med_hours": "object",
+      "prev_admits_1yr": "int64",
+      "prev_ed_visits_1yr": "int64",
+      "sbp_cv_6h": "object",
+      "hr_range_6h": "object",
+      "missing_lactate_6h": "int64",
+      "missing_troponin_6h": "int64",
+      "sbp_min_24h": "float64",
+      "sbp_max_24h": "float64",
+      "sbp_mean_24h": "object",
+      "sbp_std_24h": "object",
+      "hr_min_24h": "object",
+      "hr_max_24h": "object",
+      "hr_mean_24h": "object",
+      "rr_max_24h": "object",
+      "rr_mean_24h": "object",
+      "spo2_min_24h": "object",
+      "spo2_mean_24h": "object",
+      "temp_max_24h": "object",
+      "n_vitalsign_measurements_24h": "int64",
+      "lactate_first_24h": "float64",
+      "troponin_first_24h": "float64",
+      "is_hs_troponin_24h": "float64",
+      "creatinine_first_24h": "float64",
+      "potassium_first_24h": "float64",
+      "sodium_first_24h": "float64",
+      "bicarbonate_first_24h": "float64",
+      "wbc_first_24h": "float64",
+      "hemoglobin_first_24h": "float64",
+      "platelet_first_24h": "float64",
+      "glucose_first_24h": "float64",
+      "bun_first_24h": "float64",
+      "bilirubin_first_24h": "float64",
+      "inr_first_24h": "float64",
+      "lactate_max_24h": "float64",
+      "creatinine_max_24h": "float64",
+      "bun_creatinine_ratio": "float64",
+      "lactate_delta_24h": "float64",
+      "y_death_24h": "int64",
+      "y_death_48h": "int64",
+      "y_death_hosp": "int64",
+      "missing_sbp_std_6h": "int64",
+      "missing_hr_std_6h": "int64",
+      "missing_temp_max_6h": "int64",
+      "missing_temp_min_6h": "int64",
+      "missing_lactate_first_6h": "int64",
+      "missing_troponin_first_6h": "int64",
+      "missing_is_hs_troponin_6h": "int64",
+      "missing_creatinine_first_6h": "int64",
+      "missing_potassium_first_6h": "int64",
+      "missing_sodium_first_6h": "int64",
+      "missing_bicarbonate_first_6h": "int64",
+      "missing_wbc_first_6h": "int64",
+      "missing_hemoglobin_first_6h": "int64",
+      "missing_platelet_first_6h": "int64",
+      "missing_time_to_first_lab_hours": "int64",
+      "missing_time_to_first_med_hours": "int64",
+      "missing_sbp_cv_6h": "int64",
+      "missing_sbp_std_24h": "int64",
+      "missing_lactate_first_24h": "int64",
+      "missing_troponin_first_24h": "int64",
+      "missing_is_hs_troponin_24h": "int64",
+      "missing_creatinine_first_24h": "int64",
+      "missing_potassium_first_24h": "int64",
+      "missing_sodium_first_24h": "int64",
+      "missing_bicarbonate_first_24h": "int64",
+      "missing_wbc_first_24h": "int64",
+      "missing_hemoglobin_first_24h": "int64",
+      "missing_platelet_first_24h": "int64",
+      "missing_glucose_first_24h": "int64",
+      "missing_bun_first_24h": "int64",
+      "missing_bilirubin_first_24h": "int64",
+      "missing_inr_first_24h": "int64",
+      "missing_lactate_max_24h": "int64",
+      "missing_creatinine_max_24h": "int64",
+      "missing_bun_creatinine_ratio": "int64",
+      "missing_lactate_delta_24h": "int64"
+    }
+  },
+  "column_analysis": {
+    "stay_id": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 202990,
+      "min": 30000012.0,
+      "max": 39999965.0,
+      "mean": 35002897.8364,
+      "std": 2887198.3292,
+      "median": 35005260.5,
+      "q25": 32501034.0,
+      "q75": 37501300.0
+    },
+    "subject_id": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 107373,
+      "min": 10000032.0,
+      "max": 19999987.0,
+      "mean": 15011679.703,
+      "std": 2875658.6821,
+      "median": 15017942.0,
+      "q25": 12515925.25,
+      "q75": 17506366.5
+    },
+    "hadm_id": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 202415,
+      "min": 20000019.0,
+      "max": 29999809.0,
+      "mean": 24994989.0689,
+      "std": 2888734.388,
+      "median": 24999394.0,
+      "q25": 22489808.5,
+      "q75": 27493895.75
+    },
+    "ed_intime": {
+      "dtype": "datetime64[ns]",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 202478
+    },
+    "ed_outtime": {
+      "dtype": "datetime64[ns]",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 202683
+    },
+    "age_at_ed": {
+      "dtype": "object",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 86
+    },
+    "gender": {
+      "dtype": "object",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "value_counts": {
+        "F": 102340,
+        "M": 100650
+      }
+    },
+    "ed_los_hours": {
+      "dtype": "object",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 29713
+    },
+    "arrival_transport": {
+      "dtype": "object",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 5,
+      "value_counts": {
+        "AMBULANCE": 104933,
+        "WALK IN": 89280,
+        "UNKNOWN": 7378,
+        "HELICOPTER": 815,
+        "OTHER": 584
+      }
+    },
+    "race": {
+      "dtype": "object",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 33
+    },
+    "sbp_min_6h": {
+      "dtype": "float64",
+      "n_missing": 11380,
+      "pct_missing": 5.61,
+      "n_unique": 223,
+      "min": 0.0,
+      "max": 232.0,
+      "mean": 121.0002,
+      "std": 21.9767,
+      "median": 120.0,
+      "q25": 107.0,
+      "q75": 134.0
+    },
+    "sbp_max_6h": {
+      "dtype": "float64",
+      "n_missing": 11380,
+      "pct_missing": 5.61,
+      "n_unique": 216,
+      "min": 10.0,
+      "max": 461.0,
+      "mean": 139.0272,
+      "std": 23.4656,
+      "median": 137.0,
+      "q25": 122.0,
+      "q75": 153.0
+    },
+    "sbp_mean_6h": {
+      "dtype": "object",
+      "n_missing": 11380,
+      "pct_missing": 5.61,
+      "n_unique": 5178
+    },
+    "sbp_std_6h": {
+      "dtype": "object",
+      "n_missing": 47247,
+      "pct_missing": 23.28,
+      "n_unique": 19295
+    },
+    "dbp_min_6h": {
+      "dtype": "float64",
+      "n_missing": 11380,
+      "pct_missing": 5.61,
+      "n_unique": 178,
+      "min": 0.0,
+      "max": 8697.0,
+      "mean": 66.3966,
+      "std": 37.0002,
+      "median": 66.0,
+      "q25": 56.0,
+      "q75": 76.0
+    },
+    "hr_min_6h": {
+      "dtype": "object",
+      "n_missing": 11125,
+      "pct_missing": 5.48,
+      "n_unique": 174
+    },
+    "hr_max_6h": {
+      "dtype": "object",
+      "n_missing": 11125,
+      "pct_missing": 5.48,
+      "n_unique": 227
+    },
+    "hr_mean_6h": {
+      "dtype": "object",
+      "n_missing": 11125,
+      "pct_missing": 5.48,
+      "n_unique": 4794
+    },
+    "hr_std_6h": {
+      "dtype": "object",
+      "n_missing": 46396,
+      "pct_missing": 22.86,
+      "n_unique": 14300
+    },
+    "rr_max_6h": {
+      "dtype": "object",
+      "n_missing": 11403,
+      "pct_missing": 5.62,
+      "n_unique": 91
+    },
+    "rr_mean_6h": {
+      "dtype": "object",
+      "n_missing": 11403,
+      "pct_missing": 5.62,
+      "n_unique": 1781
+    },
+    "spo2_min_6h": {
+      "dtype": "object",
+      "n_missing": 16437,
+      "pct_missing": 8.1,
+      "n_unique": 106
+    },
+    "spo2_mean_6h": {
+      "dtype": "object",
+      "n_missing": 16437,
+      "pct_missing": 8.1,
+      "n_unique": 1227
+    },
+    "temp_max_6h": {
+      "dtype": "object",
+      "n_missing": 23203,
+      "pct_missing": 11.43,
+      "n_unique": 435
+    },
+    "temp_min_6h": {
+      "dtype": "object",
+      "n_missing": 23203,
+      "pct_missing": 11.43,
+      "n_unique": 473
+    },
+    "n_vitalsign_measurements_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 60,
+      "min": 0.0,
+      "max": 105.0,
+      "mean": 3.1408,
+      "std": 2.5993,
+      "median": 3.0,
+      "q25": 2.0,
+      "q75": 4.0
+    },
+    "chiefcomplaint": {
+      "dtype": "object",
+      "n_missing": 8,
+      "pct_missing": 0.0,
+      "n_unique": 35730
+    },
+    "lactate_first_6h": {
+      "dtype": "float64",
+      "n_missing": 180617,
+      "pct_missing": 88.98,
+      "n_unique": 941,
+      "min": 0.3,
+      "max": 13860.0,
+      "mean": 56.4282,
+      "std": 302.3926,
+      "median": 1.8,
+      "q25": 1.3,
+      "q75": 3.0
+    },
+    "troponin_first_6h": {
+      "dtype": "float64",
+      "n_missing": 198284,
+      "pct_missing": 97.68,
+      "n_unique": 316,
+      "min": 0.01,
+      "max": 23.63,
+      "mean": 0.389,
+      "std": 1.4916,
+      "median": 0.07,
+      "q25": 0.03,
+      "q75": 0.21
+    },
+    "is_hs_troponin_6h": {
+      "dtype": "float64",
+      "n_missing": 198284,
+      "pct_missing": 97.68,
+      "n_unique": 1,
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "std": 0.0,
+      "median": 1.0,
+      "q25": 1.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1.0": 4706
+      }
+    },
+    "creatinine_first_6h": {
+      "dtype": "float64",
+      "n_missing": 161438,
+      "pct_missing": 79.53,
+      "n_unique": 395,
+      "min": 0.1,
+      "max": 4006.3,
+      "mean": 2.7468,
+      "std": 29.452,
+      "median": 0.9,
+      "q25": 0.7,
+      "q75": 1.3
+    },
+    "potassium_first_6h": {
+      "dtype": "float64",
+      "n_missing": 160580,
+      "pct_missing": 79.11,
+      "n_unique": 171,
+      "min": 1.0,
+      "max": 99.0,
+      "mean": 4.6457,
+      "std": 4.1084,
+      "median": 4.2,
+      "q25": 3.8,
+      "q75": 4.6
+    },
+    "sodium_first_6h": {
+      "dtype": "float64",
+      "n_missing": 160959,
+      "pct_missing": 79.29,
+      "n_unique": 165,
+      "min": 10.0,
+      "max": 251.0,
+      "mean": 137.046,
+      "std": 10.7639,
+      "median": 139.0,
+      "q25": 136.0,
+      "q75": 141.0
+    },
+    "bicarbonate_first_6h": {
+      "dtype": "float64",
+      "n_missing": 161925,
+      "pct_missing": 79.77,
+      "n_unique": 51,
+      "min": 3.0,
+      "max": 57.0,
+      "mean": 23.6854,
+      "std": 4.1651,
+      "median": 24.0,
+      "q25": 21.0,
+      "q75": 26.0
+    },
+    "wbc_first_6h": {
+      "dtype": "float64",
+      "n_missing": 160141,
+      "pct_missing": 78.89,
+      "n_unique": 645,
+      "min": 0.1,
+      "max": 495.6,
+      "mean": 10.8112,
+      "std": 12.9989,
+      "median": 8.7,
+      "q25": 6.2,
+      "q75": 12.0
+    },
+    "hemoglobin_first_6h": {
+      "dtype": "float64",
+      "n_missing": 161689,
+      "pct_missing": 79.65,
+      "n_unique": 183,
+      "min": 0.3,
+      "max": 35.0,
+      "mean": 11.8599,
+      "std": 2.3974,
+      "median": 12.1,
+      "q25": 10.4,
+      "q75": 13.5
+    },
+    "platelet_first_6h": {
+      "dtype": "float64",
+      "n_missing": 162345,
+      "pct_missing": 79.98,
+      "n_unique": 811,
+      "min": 5.0,
+      "max": 2947.0,
+      "mean": 239.6593,
+      "std": 109.3978,
+      "median": 226.0,
+      "q25": 174.0,
+      "q75": 288.0
+    },
+    "time_to_first_lab_hours": {
+      "dtype": "object",
+      "n_missing": 60145,
+      "pct_missing": 29.63,
+      "n_unique": 1441
+    },
+    "time_to_first_med_hours": {
+      "dtype": "object",
+      "n_missing": 33548,
+      "pct_missing": 16.53,
+      "n_unique": 1381
+    },
+    "prev_admits_1yr": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 70,
+      "min": 0.0,
+      "max": 69.0,
+      "mean": 1.3732,
+      "std": 3.1073,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 2.0
+    },
+    "prev_ed_visits_1yr": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 101,
+      "min": 0.0,
+      "max": 112.0,
+      "mean": 1.5797,
+      "std": 4.2326,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 2.0
+    },
+    "sbp_cv_6h": {
+      "dtype": "object",
+      "n_missing": 47247,
+      "pct_missing": 23.28,
+      "n_unique": 79598
+    },
+    "hr_range_6h": {
+      "dtype": "object",
+      "n_missing": 11125,
+      "pct_missing": 5.48,
+      "n_unique": 188
+    },
+    "missing_lactate_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.8898,
+      "std": 0.3132,
+      "median": 1.0,
+      "q25": 1.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 180617,
+        "0": 22373
+      }
+    },
+    "missing_troponin_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.9768,
+      "std": 0.1505,
+      "median": 1.0,
+      "q25": 1.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 198284,
+        "0": 4706
+      }
+    },
+    "sbp_min_24h": {
+      "dtype": "float64",
+      "n_missing": 6267,
+      "pct_missing": 3.09,
+      "n_unique": 221,
+      "min": 0.0,
+      "max": 227.0,
+      "mean": 116.1553,
+      "std": 21.2539,
+      "median": 115.0,
+      "q25": 103.0,
+      "q75": 128.0
+    },
+    "sbp_max_24h": {
+      "dtype": "float64",
+      "n_missing": 6267,
+      "pct_missing": 3.09,
+      "n_unique": 213,
+      "min": 10.0,
+      "max": 1234.0,
+      "mean": 141.5894,
+      "std": 23.4436,
+      "median": 139.0,
+      "q25": 125.0,
+      "q75": 155.0
+    },
+    "sbp_mean_24h": {
+      "dtype": "object",
+      "n_missing": 6267,
+      "pct_missing": 3.09,
+      "n_unique": 7653
+    },
+    "sbp_std_24h": {
+      "dtype": "object",
+      "n_missing": 21532,
+      "pct_missing": 10.61,
+      "n_unique": 35827
+    },
+    "hr_min_24h": {
+      "dtype": "object",
+      "n_missing": 6151,
+      "pct_missing": 3.03,
+      "n_unique": 174
+    },
+    "hr_max_24h": {
+      "dtype": "object",
+      "n_missing": 6151,
+      "pct_missing": 3.03,
+      "n_unique": 231
+    },
+    "hr_mean_24h": {
+      "dtype": "object",
+      "n_missing": 6151,
+      "pct_missing": 3.03,
+      "n_unique": 7080
+    },
+    "rr_max_24h": {
+      "dtype": "object",
+      "n_missing": 6253,
+      "pct_missing": 3.08,
+      "n_unique": 92
+    },
+    "rr_mean_24h": {
+      "dtype": "object",
+      "n_missing": 6253,
+      "pct_missing": 3.08,
+      "n_unique": 2423
+    },
+    "spo2_min_24h": {
+      "dtype": "object",
+      "n_missing": 9578,
+      "pct_missing": 4.72,
+      "n_unique": 106
+    },
+    "spo2_mean_24h": {
+      "dtype": "object",
+      "n_missing": 9578,
+      "pct_missing": 4.72,
+      "n_unique": 1721
+    },
+    "temp_max_24h": {
+      "dtype": "object",
+      "n_missing": 10499,
+      "pct_missing": 5.17,
+      "n_unique": 441
+    },
+    "n_vitalsign_measurements_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 69,
+      "min": 0.0,
+      "max": 109.0,
+      "mean": 4.9366,
+      "std": 3.6301,
+      "median": 4.0,
+      "q25": 3.0,
+      "q75": 6.0
+    },
+    "lactate_first_24h": {
+      "dtype": "float64",
+      "n_missing": 149414,
+      "pct_missing": 73.61,
+      "n_unique": 1595,
+      "min": 0.2,
+      "max": 51900.0,
+      "mean": 128.2583,
+      "std": 501.0205,
+      "median": 2.7,
+      "q25": 1.5,
+      "q75": 192.0
+    },
+    "troponin_first_24h": {
+      "dtype": "float64",
+      "n_missing": 186090,
+      "pct_missing": 91.67,
+      "n_unique": 606,
+      "min": 0.01,
+      "max": 51.84,
+      "mean": 0.377,
+      "std": 1.316,
+      "median": 0.07,
+      "q25": 0.03,
+      "q75": 0.22
+    },
+    "is_hs_troponin_24h": {
+      "dtype": "float64",
+      "n_missing": 186090,
+      "pct_missing": 91.67,
+      "n_unique": 1,
+      "min": 1.0,
+      "max": 1.0,
+      "mean": 1.0,
+      "std": 0.0,
+      "median": 1.0,
+      "q25": 1.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1.0": 16900
+      }
+    },
+    "creatinine_first_24h": {
+      "dtype": "float64",
+      "n_missing": 68370,
+      "pct_missing": 33.68,
+      "n_unique": 548,
+      "min": 0.1,
+      "max": 7531.9,
+      "mean": 3.264,
+      "std": 37.166,
+      "median": 0.9,
+      "q25": 0.7,
+      "q75": 1.3
+    },
+    "potassium_first_24h": {
+      "dtype": "float64",
+      "n_missing": 68056,
+      "pct_missing": 33.53,
+      "n_unique": 187,
+      "min": 0.8,
+      "max": 100.0,
+      "mean": 4.6375,
+      "std": 4.6429,
+      "median": 4.1,
+      "q25": 3.8,
+      "q75": 4.5
+    },
+    "sodium_first_24h": {
+      "dtype": "float64",
+      "n_missing": 68197,
+      "pct_missing": 33.6,
+      "n_unique": 185,
+      "min": 10.0,
+      "max": 293.0,
+      "mean": 137.1495,
+      "std": 12.1469,
+      "median": 139.0,
+      "q25": 136.0,
+      "q75": 141.0
+    },
+    "bicarbonate_first_24h": {
+      "dtype": "float64",
+      "n_missing": 69107,
+      "pct_missing": 34.04,
+      "n_unique": 55,
+      "min": 2.0,
+      "max": 57.0,
+      "mean": 24.3712,
+      "std": 4.1185,
+      "median": 24.0,
+      "q25": 22.0,
+      "q75": 27.0
+    },
+    "wbc_first_24h": {
+      "dtype": "float64",
+      "n_missing": 67678,
+      "pct_missing": 33.34,
+      "n_unique": 881,
+      "min": 0.1,
+      "max": 572.5,
+      "mean": 9.6957,
+      "std": 11.4165,
+      "median": 7.9,
+      "q25": 5.7,
+      "q75": 10.9
+    },
+    "hemoglobin_first_24h": {
+      "dtype": "float64",
+      "n_missing": 69170,
+      "pct_missing": 34.08,
+      "n_unique": 198,
+      "min": 0.1,
+      "max": 35.0,
+      "mean": 11.1934,
+      "std": 2.3968,
+      "median": 11.4,
+      "q25": 9.6,
+      "q75": 12.9
+    },
+    "platelet_first_24h": {
+      "dtype": "float64",
+      "n_missing": 69807,
+      "pct_missing": 34.39,
+      "n_unique": 972,
+      "min": 5.0,
+      "max": 2947.0,
+      "mean": 227.0869,
+      "std": 107.6441,
+      "median": 214.0,
+      "q25": 162.0,
+      "q75": 275.0
+    },
+    "glucose_first_24h": {
+      "dtype": "float64",
+      "n_missing": 68957,
+      "pct_missing": 33.97,
+      "n_unique": 773,
+      "min": 1.0,
+      "max": 3678.0,
+      "mean": 131.3127,
+      "std": 90.4266,
+      "median": 108.0,
+      "q25": 92.0,
+      "q75": 138.0
+    },
+    "bun_first_24h": {
+      "dtype": "float64",
+      "n_missing": 68781,
+      "pct_missing": 33.88,
+      "n_unique": 898,
+      "min": 1.0,
+      "max": 1888.0,
+      "mean": 28.6472,
+      "std": 65.4442,
+      "median": 17.0,
+      "q25": 12.0,
+      "q75": 26.0
+    },
+    "bilirubin_first_24h": {
+      "dtype": "float64",
+      "n_missing": 147945,
+      "pct_missing": 72.88,
+      "n_unique": 337,
+      "min": 0.1,
+      "max": 55.1,
+      "mean": 1.2501,
+      "std": 2.7115,
+      "median": 0.5,
+      "q25": 0.3,
+      "q75": 1.0
+    },
+    "inr_first_24h": {
+      "dtype": "float64",
+      "n_missing": 123789,
+      "pct_missing": 60.98,
+      "n_unique": 153,
+      "min": 0.6,
+      "max": 23.7,
+      "mean": 1.4794,
+      "std": 0.9178,
+      "median": 1.2,
+      "q25": 1.1,
+      "q75": 1.5
+    },
+    "lactate_max_24h": {
+      "dtype": "float64",
+      "n_missing": 149388,
+      "pct_missing": 73.59,
+      "n_unique": 1864,
+      "min": 0.3,
+      "max": 1276103.0,
+      "mean": 199.5627,
+      "std": 5548.8095,
+      "median": 5.2,
+      "q25": 1.6,
+      "q75": 221.0
+    },
+    "creatinine_max_24h": {
+      "dtype": "float64",
+      "n_missing": 68104,
+      "pct_missing": 33.55,
+      "n_unique": 768,
+      "min": 0.1,
+      "max": 11825.0,
+      "mean": 8.3244,
+      "std": 108.8579,
+      "median": 0.9,
+      "q25": 0.7,
+      "q75": 1.4
+    },
+    "bun_creatinine_ratio": {
+      "dtype": "float64",
+      "n_missing": 68861,
+      "pct_missing": 33.92,
+      "n_unique": 7085,
+      "min": 0.005443513588868679,
+      "max": 11240.0,
+      "mean": 19.8209,
+      "std": 62.9962,
+      "median": 17.27272727272727,
+      "q25": 12.857142857142858,
+      "q75": 22.727272727272727
+    },
+    "lactate_delta_24h": {
+      "dtype": "float64",
+      "n_missing": 149414,
+      "pct_missing": 73.61,
+      "n_unique": 3495,
+      "min": 0.0,
+      "max": 1276101.8,
+      "mean": 71.3382,
+      "std": 5527.1613,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 0.0
+    },
+    "y_death_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.0029,
+      "std": 0.0541,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 0.0,
+      "value_counts": {
+        "0": 202395,
+        "1": 595
+      }
+    },
+    "y_death_48h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.0055,
+      "std": 0.074,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 0.0,
+      "value_counts": {
+        "0": 201871,
+        "1": 1119
+      }
+    },
+    "y_death_hosp": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.0226,
+      "std": 0.1486,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 0.0,
+      "value_counts": {
+        "0": 198403,
+        "1": 4587
+      }
+    },
+    "missing_sbp_std_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.2328,
+      "std": 0.4226,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 0.0,
+      "value_counts": {
+        "0": 155743,
+        "1": 47247
+      }
+    },
+    "missing_hr_std_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.2286,
+      "std": 0.4199,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 0.0,
+      "value_counts": {
+        "0": 156594,
+        "1": 46396
+      }
+    },
+    "missing_temp_max_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.1143,
+      "std": 0.3182,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 0.0,
+      "value_counts": {
+        "0": 179787,
+        "1": 23203
+      }
+    },
+    "missing_temp_min_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.1143,
+      "std": 0.3182,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 0.0,
+      "value_counts": {
+        "0": 179787,
+        "1": 23203
+      }
+    },
+    "missing_lactate_first_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.8898,
+      "std": 0.3132,
+      "median": 1.0,
+      "q25": 1.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 180617,
+        "0": 22373
+      }
+    },
+    "missing_troponin_first_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.9768,
+      "std": 0.1505,
+      "median": 1.0,
+      "q25": 1.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 198284,
+        "0": 4706
+      }
+    },
+    "missing_is_hs_troponin_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.9768,
+      "std": 0.1505,
+      "median": 1.0,
+      "q25": 1.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 198284,
+        "0": 4706
+      }
+    },
+    "missing_creatinine_first_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.7953,
+      "std": 0.4035,
+      "median": 1.0,
+      "q25": 1.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 161438,
+        "0": 41552
+      }
+    },
+    "missing_potassium_first_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.7911,
+      "std": 0.4065,
+      "median": 1.0,
+      "q25": 1.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 160580,
+        "0": 42410
+      }
+    },
+    "missing_sodium_first_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.7929,
+      "std": 0.4052,
+      "median": 1.0,
+      "q25": 1.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 160959,
+        "0": 42031
+      }
+    },
+    "missing_bicarbonate_first_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.7977,
+      "std": 0.4017,
+      "median": 1.0,
+      "q25": 1.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 161925,
+        "0": 41065
+      }
+    },
+    "missing_wbc_first_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.7889,
+      "std": 0.4081,
+      "median": 1.0,
+      "q25": 1.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 160141,
+        "0": 42849
+      }
+    },
+    "missing_hemoglobin_first_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.7965,
+      "std": 0.4026,
+      "median": 1.0,
+      "q25": 1.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 161689,
+        "0": 41301
+      }
+    },
+    "missing_platelet_first_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.7998,
+      "std": 0.4002,
+      "median": 1.0,
+      "q25": 1.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 162345,
+        "0": 40645
+      }
+    },
+    "missing_time_to_first_lab_hours": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.2963,
+      "std": 0.4566,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 1.0,
+      "value_counts": {
+        "0": 142845,
+        "1": 60145
+      }
+    },
+    "missing_time_to_first_med_hours": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.1653,
+      "std": 0.3714,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 0.0,
+      "value_counts": {
+        "0": 169442,
+        "1": 33548
+      }
+    },
+    "missing_sbp_cv_6h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.2328,
+      "std": 0.4226,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 0.0,
+      "value_counts": {
+        "0": 155743,
+        "1": 47247
+      }
+    },
+    "missing_sbp_std_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.1061,
+      "std": 0.3079,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 0.0,
+      "value_counts": {
+        "0": 181458,
+        "1": 21532
+      }
+    },
+    "missing_lactate_first_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.7361,
+      "std": 0.4408,
+      "median": 1.0,
+      "q25": 0.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 149414,
+        "0": 53576
+      }
+    },
+    "missing_troponin_first_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.9167,
+      "std": 0.2763,
+      "median": 1.0,
+      "q25": 1.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 186090,
+        "0": 16900
+      }
+    },
+    "missing_is_hs_troponin_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.9167,
+      "std": 0.2763,
+      "median": 1.0,
+      "q25": 1.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 186090,
+        "0": 16900
+      }
+    },
+    "missing_creatinine_first_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.3368,
+      "std": 0.4726,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 1.0,
+      "value_counts": {
+        "0": 134620,
+        "1": 68370
+      }
+    },
+    "missing_potassium_first_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.3353,
+      "std": 0.4721,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 1.0,
+      "value_counts": {
+        "0": 134934,
+        "1": 68056
+      }
+    },
+    "missing_sodium_first_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.336,
+      "std": 0.4723,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 1.0,
+      "value_counts": {
+        "0": 134793,
+        "1": 68197
+      }
+    },
+    "missing_bicarbonate_first_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.3404,
+      "std": 0.4739,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 1.0,
+      "value_counts": {
+        "0": 133883,
+        "1": 69107
+      }
+    },
+    "missing_wbc_first_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.3334,
+      "std": 0.4714,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 1.0,
+      "value_counts": {
+        "0": 135312,
+        "1": 67678
+      }
+    },
+    "missing_hemoglobin_first_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.3408,
+      "std": 0.474,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 1.0,
+      "value_counts": {
+        "0": 133820,
+        "1": 69170
+      }
+    },
+    "missing_platelet_first_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.3439,
+      "std": 0.475,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 1.0,
+      "value_counts": {
+        "0": 133183,
+        "1": 69807
+      }
+    },
+    "missing_glucose_first_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.3397,
+      "std": 0.4736,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 1.0,
+      "value_counts": {
+        "0": 134033,
+        "1": 68957
+      }
+    },
+    "missing_bun_first_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.3388,
+      "std": 0.4733,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 1.0,
+      "value_counts": {
+        "0": 134209,
+        "1": 68781
+      }
+    },
+    "missing_bilirubin_first_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.7288,
+      "std": 0.4446,
+      "median": 1.0,
+      "q25": 0.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 147945,
+        "0": 55045
+      }
+    },
+    "missing_inr_first_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.6098,
+      "std": 0.4878,
+      "median": 1.0,
+      "q25": 0.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 123789,
+        "0": 79201
+      }
+    },
+    "missing_lactate_max_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.7359,
+      "std": 0.4408,
+      "median": 1.0,
+      "q25": 0.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 149388,
+        "0": 53602
+      }
+    },
+    "missing_creatinine_max_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.3355,
+      "std": 0.4722,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 1.0,
+      "value_counts": {
+        "0": 134886,
+        "1": 68104
+      }
+    },
+    "missing_bun_creatinine_ratio": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.3392,
+      "std": 0.4735,
+      "median": 0.0,
+      "q25": 0.0,
+      "q75": 1.0,
+      "value_counts": {
+        "0": 134129,
+        "1": 68861
+      }
+    },
+    "missing_lactate_delta_24h": {
+      "dtype": "int64",
+      "n_missing": 0,
+      "pct_missing": 0.0,
+      "n_unique": 2,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.7361,
+      "std": 0.4408,
+      "median": 1.0,
+      "q25": 0.0,
+      "q75": 1.0,
+      "value_counts": {
+        "1": 149414,
+        "0": 53576
+      }
+    }
+  },
+  "missing_values": {
+    "total_missing_cells": 4081124,
+    "total_cells": 23343850,
+    "pct_missing_overall": 17.48,
+    "columns_with_missing": 60,
+    "columns_fully_complete": 55,
+    "high_missing_columns": {
+      "troponin_first_6h": 97.68,
+      "is_hs_troponin_6h": 97.68,
+      "troponin_first_24h": 91.67,
+      "is_hs_troponin_24h": 91.67,
+      "lactate_first_6h": 88.98,
+      "platelet_first_6h": 79.98,
+      "bicarbonate_first_6h": 79.77,
+      "hemoglobin_first_6h": 79.65,
+      "creatinine_first_6h": 79.53,
+      "sodium_first_6h": 79.29,
+      "potassium_first_6h": 79.11,
+      "wbc_first_6h": 78.89,
+      "lactate_first_24h": 73.61,
+      "lactate_delta_24h": 73.61,
+      "lactate_max_24h": 73.59,
+      "bilirubin_first_24h": 72.88,
+      "inr_first_24h": 60.98
+    }
+  },
+  "outcome_analysis": {
+    "present": false
+  },
+  "outliers": {
+    "columns_checked": 20,
+    "columns_with_outliers": 17,
+    "details": {
+      "sbp_min_6h": {
+        "n_outliers_iqr": 3987,
+        "pct_outliers_iqr": 2.08,
+        "n_outliers_zscore": 1630,
+        "iqr_bounds": [
+          66.5,
+          174.5
+        ]
+      },
+      "sbp_max_6h": {
+        "n_outliers_iqr": 2906,
+        "pct_outliers_iqr": 1.52,
+        "n_outliers_zscore": 1537,
+        "iqr_bounds": [
+          75.5,
+          199.5
+        ]
+      },
+      "dbp_min_6h": {
+        "n_outliers_iqr": 1322,
+        "pct_outliers_iqr": 0.69,
+        "n_outliers_zscore": 25,
+        "iqr_bounds": [
+          26.0,
+          106.0
+        ]
+      },
+      "n_vitalsign_measurements_6h": {
+        "n_outliers_iqr": 10045,
+        "pct_outliers_iqr": 4.95,
+        "n_outliers_zscore": 3762,
+        "iqr_bounds": [
+          -1.0,
+          7.0
+        ]
+      },
+      "lactate_first_6h": {
+        "n_outliers_iqr": 3451,
+        "pct_outliers_iqr": 15.42,
+        "n_outliers_zscore": 173,
+        "iqr_bounds": [
+          -1.25,
+          5.55
+        ]
+      },
+      "troponin_first_6h": {
+        "n_outliers_iqr": 600,
+        "pct_outliers_iqr": 12.75,
+        "n_outliers_zscore": 75,
+        "iqr_bounds": [
+          -0.24,
+          0.48
+        ]
+      },
+      "creatinine_first_6h": {
+        "n_outliers_iqr": 4076,
+        "pct_outliers_iqr": 9.81,
+        "n_outliers_zscore": 205,
+        "iqr_bounds": [
+          -0.2,
+          2.2
+        ]
+      },
+      "potassium_first_6h": {
+        "n_outliers_iqr": 2838,
+        "pct_outliers_iqr": 6.69,
+        "n_outliers_zscore": 361,
+        "iqr_bounds": [
+          2.6,
+          5.8
+        ]
+      },
+      "sodium_first_6h": {
+        "n_outliers_iqr": 2321,
+        "pct_outliers_iqr": 5.52,
+        "n_outliers_zscore": 460,
+        "iqr_bounds": [
+          128.5,
+          148.5
+        ]
+      },
+      "bicarbonate_first_6h": {
+        "n_outliers_iqr": 1233,
+        "pct_outliers_iqr": 3.0,
+        "n_outliers_zscore": 627,
+        "iqr_bounds": [
+          13.5,
+          33.5
+        ]
+      },
+      "wbc_first_6h": {
+        "n_outliers_iqr": 2366,
+        "pct_outliers_iqr": 5.52,
+        "n_outliers_zscore": 538,
+        "iqr_bounds": [
+          -2.5,
+          20.7
+        ]
+      },
+      "hemoglobin_first_6h": {
+        "n_outliers_iqr": 561,
+        "pct_outliers_iqr": 1.36,
+        "n_outliers_zscore": 116,
+        "iqr_bounds": [
+          5.75,
+          18.15
+        ]
+      },
+      "platelet_first_6h": {
+        "n_outliers_iqr": 1462,
+        "pct_outliers_iqr": 3.6,
+        "n_outliers_zscore": 529,
+        "iqr_bounds": [
+          3.0,
+          459.0
+        ]
+      },
+      "prev_admits_1yr": {
+        "n_outliers_iqr": 11917,
+        "pct_outliers_iqr": 5.87,
+        "n_outliers_zscore": 3412,
+        "iqr_bounds": [
+          -3.0,
+          5.0
+        ]
+      },
+      "prev_ed_visits_1yr": {
+        "n_outliers_iqr": 13630,
+        "pct_outliers_iqr": 6.71,
+        "n_outliers_zscore": 2928,
+        "iqr_bounds": [
+          -3.0,
+          5.0
+        ]
+      },
+      "sbp_min_24h": {
+        "n_outliers_iqr": 5062,
+        "pct_outliers_iqr": 2.57,
+        "n_outliers_zscore": 2186,
+        "iqr_bounds": [
+          65.5,
+          165.5
+        ]
+      },
+      "sbp_max_24h": {
+        "n_outliers_iqr": 3032,
+        "pct_outliers_iqr": 1.54,
+        "n_outliers_zscore": 1514,
+        "iqr_bounds": [
+          80.0,
+          200.0
+        ]
+      }
+    }
+  },
+  "correlations": {
+    "with_outcome": {},
+    "high_feature_correlations": []
+  },
+  "sanity_checks": [
+    {
+      "check": "unique_stay_ids",
+      "status": "pass",
+      "message": "All stay_ids unique"
+    },
+    {
+      "check": "no_all_null_columns",
+      "status": "pass",
+      "message": "No all-null columns found"
+    }
+  ],
+  "warnings": [
+    "Column 'is_hs_troponin_6h' has constant value: 1.0",
+    "Column 'is_hs_troponin_24h' has constant value: 1.0",
+    "17 columns have >50% missing values"
+  ],
+  "errors": [],
+  "quality_score": 85.3
+}

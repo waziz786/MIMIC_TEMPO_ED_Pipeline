@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>QUICK_START_DATA_LOADING.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="quick-start-loading-mimic-iv-mimic-iv-ed-and-ecg-data-into-postgresql">Quick Start: Loading MIMIC-IV, MIMIC-IV-ED, and ECG Data into PostgreSQL</h1>
+<p><strong>For first-time users who have downloaded data from PhysioNet</strong></p>
+<hr>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>✅ PostgreSQL 18+ installed and running<br>
+✅ Data downloaded and extracted:</p>
+<ul>
+<li><code>MIMIC-IV v3.1</code> → extracted to local folder</li>
+<li><code>MIMIC-IV-ED v2.2</code> → extracted to local folder</li>
+<li><code>MIMIC IV ECG DATA</code> → folder with <code>record_list.csv</code> and <code>machine_measurements.csv</code></li>
+</ul>
+<hr>
+<h2 id="step-1-set-up-your-environment">Step 1: Set Up Your Environment</h2>
+<p>Open <strong>PowerShell</strong> in your pipeline directory and set your PostgreSQL password:</p>
+<pre class="hljs"><code><div><span class="hljs-variable">$env:PGPASSWORD</span> = <span class="hljs-string">"your_postgres_password"</span>
+</div></code></pre>
+<hr>
+<h2 id="step-2-create-database-and-schemas">Step 2: Create Database and Schemas</h2>
+<pre class="hljs"><code><div><span class="hljs-variable">$env:PGPASSWORD</span> = <span class="hljs-string">"your_postgres_password"</span>
+
+<span class="hljs-comment"># Create main database</span>
+&amp; <span class="hljs-string">"C:\Program Files\PostgreSQL\18\bin\psql"</span> <span class="hljs-literal">-U</span> postgres <span class="hljs-literal">-d</span> postgres <span class="hljs-literal">-c</span> <span class="hljs-string">"CREATE DATABASE mimiciv;"</span>
+
+<span class="hljs-comment"># Create schemas</span>
+&amp; <span class="hljs-string">"C:\Program Files\PostgreSQL\18\bin\psql"</span> <span class="hljs-literal">-U</span> postgres <span class="hljs-literal">-d</span> mimiciv <span class="hljs-literal">-c</span> <span class="hljs-string">"CREATE SCHEMA IF NOT EXISTS mimiciv_hosp; CREATE SCHEMA IF NOT EXISTS mimiciv_icu; CREATE SCHEMA IF NOT EXISTS mimiciv_ed; CREATE SCHEMA IF NOT EXISTS mimiciv_ecg;"</span>
+</div></code></pre>
+<hr>
+<h2 id="step-3-load-mimic-iv-hospital-data-v31">Step 3: Load MIMIC-IV Hospital Data (v3.1)</h2>
+<h3 id="step-3a-create-tables">Step 3a: Create Tables</h3>
+<pre class="hljs"><code><div><span class="hljs-variable">$env:PGPASSWORD</span> = <span class="hljs-string">"your_postgres_password"</span>
+
+&amp; <span class="hljs-string">"C:\Program Files\PostgreSQL\18\bin\psql"</span> <span class="hljs-literal">-U</span> postgres <span class="hljs-literal">-d</span> mimiciv <span class="hljs-operator">-f</span> mimic<span class="hljs-literal">-code</span>\mimic<span class="hljs-literal">-iv</span>\buildmimic\postgres\create.sql
+</div></code></pre>
+<p><strong>Output should show:</strong></p>
+<pre class="hljs"><code><div>CREATE SCHEMA
+CREATE TABLE
+CREATE TABLE
+... (many more)
+</div></code></pre>
+<h3 id="step-3b-load-data-from-csv-files">Step 3b: Load Data from CSV Files</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Replace with YOUR data path</span>
+<span class="hljs-variable">$MIMIC_IV_PATH</span> = <span class="hljs-string">"C:\Users\YourName\Downloads\mimic-iv-3.1\mimic-iv-3.1"</span>
+
+&amp; <span class="hljs-string">"C:\Program Files\PostgreSQL\18\bin\psql"</span> <span class="hljs-literal">-U</span> postgres <span class="hljs-literal">-d</span> mimiciv <span class="hljs-literal">-v</span> ON_ERROR_STOP=<span class="hljs-number">1</span> <span class="hljs-literal">-v</span> mimic_data_dir=<span class="hljs-string">"<span class="hljs-variable">$MIMIC_IV_PATH</span>"</span> <span class="hljs-operator">-f</span> mimic<span class="hljs-literal">-code</span>\mimic<span class="hljs-literal">-iv</span>\buildmimic\postgres\load.sql
+</div></code></pre>
+<p><strong>This will display:</strong></p>
+<pre class="hljs"><code><div>COPY 546028
+COPY 89208
+COPY 6364488
+... (continues for ~20+ tables)
+</div></code></pre>
+<p>⏳ <strong>Takes 30-60 minutes</strong> (depending on disk speed, may even take longer)</p>
+<h3 id="step-3c-optional-add-constraints-and-indexes">Step 3c: (Optional) Add Constraints and Indexes</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Add data integrity constraints</span>
+&amp; <span class="hljs-string">"C:\Program Files\PostgreSQL\18\bin\psql"</span> <span class="hljs-literal">-U</span> postgres <span class="hljs-literal">-d</span> mimiciv <span class="hljs-literal">-v</span> ON_ERROR_STOP=<span class="hljs-number">1</span> <span class="hljs-literal">-v</span> mimic_data_dir=<span class="hljs-string">"<span class="hljs-variable">$MIMIC_IV_PATH</span>"</span> <span class="hljs-operator">-f</span> mimic<span class="hljs-literal">-code</span>\mimic<span class="hljs-literal">-iv</span>\buildmimic\postgres\constraint.sql
+
+<span class="hljs-comment"># Create indexes for faster queries</span>
+&amp; <span class="hljs-string">"C:\Program Files\PostgreSQL\18\bin\psql"</span> <span class="hljs-literal">-U</span> postgres <span class="hljs-literal">-d</span> mimiciv <span class="hljs-literal">-v</span> ON_ERROR_STOP=<span class="hljs-number">1</span> <span class="hljs-literal">-v</span> mimic_data_dir=<span class="hljs-string">"<span class="hljs-variable">$MIMIC_IV_PATH</span>"</span> <span class="hljs-operator">-f</span> mimic<span class="hljs-literal">-code</span>\mimic<span class="hljs-literal">-iv</span>\buildmimic\postgres\index.sql
+</div></code></pre>
+<hr>
+<h2 id="step-4-load-mimic-iv-ed-data-v22">Step 4: Load MIMIC-IV-ED Data (v2.2)</h2>
+<h3 id="step-4a-create-ed-tables">Step 4a: Create ED Tables</h3>
+<pre class="hljs"><code><div>&amp; <span class="hljs-string">"C:\Program Files\PostgreSQL\18\bin\psql"</span> <span class="hljs-literal">-U</span> postgres <span class="hljs-literal">-d</span> mimiciv <span class="hljs-operator">-f</span> mimic<span class="hljs-literal">-code</span>\mimic<span class="hljs-literal">-iv</span><span class="hljs-literal">-ed</span>\buildmimic\postgres\create.sql
+</div></code></pre>
+<h3 id="step-4b-load-ed-data">Step 4b: Load ED Data</h3>
+<pre class="hljs"><code><div><span class="hljs-comment"># Replace with YOUR data path</span>
+<span class="hljs-variable">$MIMIC_ED_PATH</span> = <span class="hljs-string">"C:\Users\YourName\Downloads\mimic-iv-ed-2.2\mimic-iv-ed-2.2"</span>
+
+&amp; <span class="hljs-string">"C:\Program Files\PostgreSQL\18\bin\psql"</span> <span class="hljs-literal">-U</span> postgres <span class="hljs-literal">-d</span> mimiciv <span class="hljs-literal">-v</span> ON_ERROR_STOP=<span class="hljs-number">1</span> <span class="hljs-literal">-v</span> mimic_data_dir=<span class="hljs-string">"<span class="hljs-variable">$MIMIC_ED_PATH</span>"</span> <span class="hljs-operator">-f</span> mimic<span class="hljs-literal">-code</span>\mimic<span class="hljs-literal">-iv</span><span class="hljs-literal">-ed</span>\buildmimic\postgres\load.sql
+</div></code></pre>
+<p>⏳ <strong>Takes 10-15 minutes</strong></p>
+<hr>
+<h2 id="step-5-load-ecg-data">Step 5: Load ECG Data</h2>
+<h3 id="step-5a-create-ecg-tables">Step 5a: Create ECG Tables</h3>
+<pre class="hljs"><code><div><span class="hljs-variable">$env:PGPASSWORD</span> = <span class="hljs-string">"your_postgres_password"</span>
+
+&amp; <span class="hljs-string">"C:\Program Files\PostgreSQL\18\bin\psql"</span> <span class="hljs-literal">-U</span> postgres <span class="hljs-literal">-d</span> mimiciv <span class="hljs-literal">-c</span> <span class="hljs-string">"
+CREATE TABLE mimiciv_ecg.record_list (
+    subject_id INTEGER,
+    study_id INTEGER,
+    file_name VARCHAR(255),
+    ecg_time TIMESTAMP,
+    path VARCHAR(255)
+);
+
+CREATE TABLE mimiciv_ecg.machine_measurements (
+    subject_id INTEGER,
+    study_id INTEGER,
+    cart_id INTEGER,
+    ecg_time TIMESTAMP,
+    report_0 TEXT, report_1 TEXT, report_2 TEXT, report_3 TEXT,
+    report_4 TEXT, report_5 TEXT, report_6 TEXT, report_7 TEXT,
+    report_8 TEXT, report_9 TEXT, report_10 TEXT, report_11 TEXT,
+    report_12 TEXT, report_13 TEXT, report_14 TEXT, report_15 TEXT,
+    report_16 TEXT, report_17 TEXT,
+    bandwidth TEXT,
+    filtering TEXT,
+    rr_interval REAL,
+    p_onset REAL,
+    p_end REAL,
+    qrs_onset REAL,
+    qrs_end REAL,
+    t_end REAL,
+    p_axis REAL,
+    qrs_axis REAL,
+    t_axis REAL
+);
+"</span>
+</div></code></pre>
+<h3 id="step-5b-load-ecg-csv-files">Step 5b: Load ECG CSV Files</h3>
+<pre class="hljs"><code><div><span class="hljs-variable">$env:PGPASSWORD</span> = <span class="hljs-string">"your_postgres_password"</span>
+
+<span class="hljs-comment"># Replace with YOUR data path</span>
+<span class="hljs-variable">$ECG_PATH</span> = <span class="hljs-string">"C:\Users\YourName\Downloads\MIMIC IV ECG DATA"</span>
+
+<span class="hljs-comment"># Load record_list</span>
+&amp; <span class="hljs-string">"C:\Program Files\PostgreSQL\18\bin\psql"</span> <span class="hljs-literal">-U</span> postgres <span class="hljs-literal">-d</span> mimiciv <span class="hljs-literal">-c</span> <span class="hljs-string">"\COPY mimiciv_ecg.record_list FROM '<span class="hljs-variable">$ECG_PATH</span>\record_list.csv' WITH (FORMAT csv, HEADER true);"</span>
+
+<span class="hljs-comment"># Load machine_measurements</span>
+&amp; <span class="hljs-string">"C:\Program Files\PostgreSQL\18\bin\psql"</span> <span class="hljs-literal">-U</span> postgres <span class="hljs-literal">-d</span> mimiciv <span class="hljs-literal">-c</span> <span class="hljs-string">"\COPY mimiciv_ecg.machine_measurements FROM '<span class="hljs-variable">$ECG_PATH</span>\machine_measurements.csv' WITH (FORMAT csv, HEADER true);"</span>
+</div></code></pre>
+<p>⏳ <strong>Takes 5-7 minutes</strong></p>
+<hr>
+<h2 id="step-6-verify-all-data-loaded">Step 6: Verify All Data Loaded</h2>
+<pre class="hljs"><code><div><span class="hljs-variable">$env:PGPASSWORD</span> = <span class="hljs-string">"your_postgres_password"</span>
+
+<span class="hljs-comment"># Check table counts</span>
+&amp; <span class="hljs-string">"C:\Program Files\PostgreSQL\18\bin\psql"</span> <span class="hljs-literal">-U</span> postgres <span class="hljs-literal">-d</span> mimiciv <span class="hljs-literal">-c</span> <span class="hljs-string">"
+SELECT schemaname, COUNT(*) as table_count 
+FROM pg_tables 
+WHERE schemaname LIKE 'mimiciv%' 
+GROUP BY schemaname 
+ORDER BY schemaname;
+"</span>
+</div></code></pre>
+<p><strong>Expected output:</strong></p>
+<pre class="hljs"><code><div>  schemaname  | table_count
+--------------+-------------
+ mimiciv_ed   |           6
+ mimiciv_ecg  |           2
+ mimiciv_hosp |          22
+ mimiciv_icu  |           9
+(4 rows)
+</div></code></pre>
+<p>Check key row counts:</p>
+<pre class="hljs"><code><div>&amp; <span class="hljs-string">"C:\Program Files\PostgreSQL\18\bin\psql"</span> <span class="hljs-literal">-U</span> postgres <span class="hljs-literal">-d</span> mimiciv <span class="hljs-literal">-c</span> <span class="hljs-string">"
+SELECT 'patients' AS table_name, COUNT(*) FROM mimiciv_hosp.patients
+UNION ALL
+SELECT 'admissions', COUNT(*) FROM mimiciv_hosp.admissions
+UNION ALL
+SELECT 'labevents', COUNT(*) FROM mimiciv_hosp.labevents
+UNION ALL
+SELECT 'icustays', COUNT(*) FROM mimiciv_icu.icustays
+UNION ALL
+SELECT 'edstays', COUNT(*) FROM mimiciv_ed.edstays
+UNION ALL
+SELECT 'ecg_records', COUNT(*) FROM mimiciv_ecg.record_list;
+"</span>
+</div></code></pre>
+<hr>
+<h2 id="typical-timings">Typical Timings</h2>
+<table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Time</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create schemas</td>
+<td>&lt; 1 min</td>
+<td>✅ Fast</td>
+</tr>
+<tr>
+<td>Create HOSP tables</td>
+<td>&lt; 1 min</td>
+<td>✅ Fast</td>
+</tr>
+<tr>
+<td>Load HOSP data</td>
+<td>30-60 min</td>
+<td>⏳ Takes time (large)</td>
+</tr>
+<tr>
+<td>Create ED tables</td>
+<td>&lt; 1 min</td>
+<td>✅ Fast</td>
+</tr>
+<tr>
+<td>Load ED data</td>
+<td>5-10 min</td>
+<td>⏳ Takes time</td>
+</tr>
+<tr>
+<td>Create ECG tables</td>
+<td>&lt; 1 min</td>
+<td>✅ Fast</td>
+</tr>
+<tr>
+<td>Load ECG data</td>
+<td>2-5 min</td>
+<td>✅ Moderate</td>
+</tr>
+<tr>
+<td><strong>TOTAL</strong></td>
+<td><strong>&gt;1hr</strong></td>
+<td>✅ One-time setup</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="%22password-authentication-failed%22">&quot;password authentication failed&quot;</h3>
+<p>Update the password variable:</p>
+<pre class="hljs"><code><div><span class="hljs-variable">$env:PGPASSWORD</span> = <span class="hljs-string">"your_correct_password"</span>
+</div></code></pre>
+<h3 id="%22no-such-file-or-directory%22">&quot;No such file or directory&quot;</h3>
+<p>Make sure paths match your actual download locations:</p>
+<pre class="hljs"><code><div><span class="hljs-comment"># Verify your paths exist</span>
+<span class="hljs-built_in">Test-Path</span> <span class="hljs-string">"C:\Users\YourName\Downloads\mimic-iv-3.1"</span>
+<span class="hljs-built_in">Test-Path</span> <span class="hljs-string">"C:\Users\YourName\Downloads\mimic-iv-ed-2.2"</span>
+<span class="hljs-built_in">Test-Path</span> <span class="hljs-string">"C:\Users\YourName\Downloads\MIMIC IV ECG DATA"</span>
+</div></code></pre>
+<h3 id="%22relation-already-exists%22">&quot;relation already exists&quot;</h3>
+<p>Drop and recreate ( very careful - deletes data):</p>
+<pre class="hljs"><code><div>&amp; <span class="hljs-string">"C:\Program Files\PostgreSQL\18\bin\psql"</span> <span class="hljs-literal">-U</span> postgres <span class="hljs-literal">-d</span> mimiciv <span class="hljs-literal">-c</span> <span class="hljs-string">"DROP SCHEMA mimiciv_hosp CASCADE;"</span>
+</div></code></pre>
+<hr>
+<h2 id="next-steps">Next Steps</h2>
+<p>Once data is loaded:</p>
+<ol>
+<li><strong>Verify database</strong> → Run verification queries above</li>
+<li><strong>Configure pipeline</strong> → Update config.yaml with database credentials</li>
+<li><strong>Run pipeline</strong> → Execute your analysis scripts</li>
+<li><strong>Query data</strong> → Use DBeaver or SQL clients to explore</li>
+</ol>
+<hr>
+<h2 id="command-reference">Command Reference</h2>
+<p><strong>Set password:</strong></p>
+<pre class="hljs"><code><div><span class="hljs-variable">$env:PGPASSWORD</span> = <span class="hljs-string">"your_password"</span>
+</div></code></pre>
+<p><strong>Connect to database:</strong></p>
+<pre class="hljs"><code><div>&amp; <span class="hljs-string">"C:\Program Files\PostgreSQL\18\bin\psql"</span> <span class="hljs-literal">-U</span> postgres <span class="hljs-literal">-d</span> mimiciv
+</div></code></pre>
+<p><strong>Run SQL file:</strong></p>
+<pre class="hljs"><code><div>&amp; <span class="hljs-string">"C:\Program Files\PostgreSQL\18\bin\psql"</span> <span class="hljs-literal">-U</span> postgres <span class="hljs-literal">-d</span> mimiciv <span class="hljs-operator">-f</span> path\to\file.sql
+</div></code></pre>
+<p><strong>Run SQL command:</strong></p>
+<pre class="hljs"><code><div>&amp; <span class="hljs-string">"C:\Program Files\PostgreSQL\18\bin\psql"</span> <span class="hljs-literal">-U</span> postgres <span class="hljs-literal">-d</span> mimiciv <span class="hljs-literal">-c</span> <span class="hljs-string">"SELECT COUNT(*) FROM table_name;"</span>
+</div></code></pre>
+<hr>
+<p><strong>For:</strong> First-time MIMIC-IV users with cardiac deterioration pipeline</p>
+
+</body>
+</html>

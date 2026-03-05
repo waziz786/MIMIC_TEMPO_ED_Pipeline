@@ -1,0 +1,217 @@
+{
+  "n_features": 19,
+  "n_samples": 75000,
+  "n_positives": 4506,
+  "feature_names": [
+    "sbp_min",
+    "sbp_max",
+    "sbp_mean",
+    "sbp_std",
+    "hr_min",
+    "hr_max",
+    "hr_mean",
+    "rr_max",
+    "rr_mean",
+    "spo2_min",
+    "spo2_mean",
+    "temp_max",
+    "n_vitalsign_measurements",
+    "age_at_ed",
+    "gender",
+    "arrival_transport",
+    "race",
+    "prev_admits_1yr",
+    "prev_ed_visits_1yr"
+  ],
+  "part_a": {
+    "w6": {
+      "n_features": 19,
+      "LR": {
+        "auroc_mean": 0.8824,
+        "auroc_std": 0.0047,
+        "auprc_mean": 0.4311,
+        "auprc_std": 0.0078,
+        "f1_mean": 0.3391
+      },
+      "GBM": {
+        "auroc_mean": 0.914,
+        "auroc_std": 0.0054,
+        "auprc_mean": 0.5508,
+        "auprc_std": 0.0148,
+        "f1_mean": 0.4498
+      }
+    },
+    "naive_w24": {
+      "n_features": 19,
+      "LR": {
+        "auroc_mean": 0.8573,
+        "auroc_std": 0.0014,
+        "auprc_mean": 0.3577,
+        "auprc_std": 0.0124,
+        "f1_mean": 0.2959
+      },
+      "GBM": {
+        "auroc_mean": 0.9114,
+        "auroc_std": 0.0046,
+        "auprc_mean": 0.5448,
+        "auprc_std": 0.0094,
+        "f1_mean": 0.4384
+      }
+    },
+    "trunc_w24": {
+      "n_features": 19,
+      "LR": {
+        "auroc_mean": 0.8501,
+        "auroc_std": 0.0017,
+        "auprc_mean": 0.3428,
+        "auprc_std": 0.0133,
+        "f1_mean": 0.2885
+      },
+      "GBM": {
+        "auroc_mean": 0.9091,
+        "auroc_std": 0.0045,
+        "auprc_mean": 0.536,
+        "auprc_std": 0.008,
+        "f1_mean": 0.4309
+      }
+    },
+    "lr_naive_vs_w6_pct": -2.845,
+    "lr_trunc_vs_w6_pct": -3.66,
+    "lr_naive_vs_trunc_pct": 0.847,
+    "gbm_naive_vs_w6_pct": -0.284,
+    "gbm_trunc_vs_w6_pct": -0.536,
+    "gbm_naive_vs_trunc_pct": 0.253,
+    "lr_drop_auroc": 0.0072,
+    "gbm_drop_auroc": 0.0023
+  },
+  "part_b_feature_contamination": [
+    {
+      "feature": "sbp_min",
+      "mean_abs_diff": 0.8766,
+      "pct_changed": 6.41
+    },
+    {
+      "feature": "sbp_mean",
+      "mean_abs_diff": 0.7625,
+      "pct_changed": 22.61
+    },
+    {
+      "feature": "sbp_std",
+      "mean_abs_diff": 0.6076,
+      "pct_changed": 26.65
+    },
+    {
+      "feature": "sbp_max",
+      "mean_abs_diff": 0.6021,
+      "pct_changed": 4.19
+    },
+    {
+      "feature": "hr_min",
+      "mean_abs_diff": 0.5304,
+      "pct_changed": 6.97
+    },
+    {
+      "feature": "hr_mean",
+      "mean_abs_diff": 0.4698,
+      "pct_changed": 20.11
+    },
+    {
+      "feature": "n_vitalsign_measurements",
+      "mean_abs_diff": 0.4288,
+      "pct_changed": 20.71
+    },
+    {
+      "feature": "hr_max",
+      "mean_abs_diff": 0.2952,
+      "pct_changed": 3.95
+    },
+    {
+      "feature": "rr_mean",
+      "mean_abs_diff": 0.1652,
+      "pct_changed": 18.84
+    },
+    {
+      "feature": "rr_max",
+      "mean_abs_diff": 0.1429,
+      "pct_changed": 3.42
+    },
+    {
+      "feature": "spo2_mean",
+      "mean_abs_diff": 0.0983,
+      "pct_changed": 17.02
+    },
+    {
+      "feature": "spo2_min",
+      "mean_abs_diff": 0.0932,
+      "pct_changed": 3.0
+    },
+    {
+      "feature": "temp_max",
+      "mean_abs_diff": 0.085,
+      "pct_changed": 5.61
+    },
+    {
+      "feature": "age_at_ed",
+      "mean_abs_diff": 0.0,
+      "pct_changed": 0.0
+    },
+    {
+      "feature": "gender",
+      "mean_abs_diff": 0.0,
+      "pct_changed": 0.0
+    },
+    {
+      "feature": "arrival_transport",
+      "mean_abs_diff": 0.0,
+      "pct_changed": 0.0
+    },
+    {
+      "feature": "race",
+      "mean_abs_diff": 0.0,
+      "pct_changed": 0.0
+    },
+    {
+      "feature": "prev_admits_1yr",
+      "mean_abs_diff": 0.0,
+      "pct_changed": 0.0
+    },
+    {
+      "feature": "prev_ed_visits_1yr",
+      "mean_abs_diff": 0.0,
+      "pct_changed": 0.0
+    }
+  ],
+  "part_c_subgroups": {
+    "<6h (63% of positives)": {
+      "n": 2764,
+      "avg_event_time_h": 3.7,
+      "avg_hours_clipped": 20.3,
+      "pct_vitals_changed": 12.9,
+      "mean_abs_vital_diff": 0.501
+    },
+    "6-12h": {
+      "n": 1305,
+      "avg_event_time_h": 8.2,
+      "avg_hours_clipped": 15.8,
+      "pct_vitals_changed": 11.6,
+      "mean_abs_vital_diff": 0.251
+    },
+    "12-24h": {
+      "n": 437,
+      "avg_event_time_h": 16.7,
+      "avg_hours_clipped": 7.3,
+      "pct_vitals_changed": 10.2,
+      "mean_abs_vital_diff": 0.175
+    }
+  },
+  "part_d_auprc": {
+    "w6_lr": 0.4311,
+    "w6_gbm": 0.5508,
+    "naive_lr": 0.3577,
+    "naive_gbm": 0.5448,
+    "trunc_lr": 0.3428,
+    "trunc_gbm": 0.536
+  },
+  "verdict": "MODERATE: Some leakage contribution detected",
+  "elapsed_min": 2.0
+}

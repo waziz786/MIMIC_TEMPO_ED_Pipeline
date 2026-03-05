@@ -1,0 +1,313 @@
+{
+  "timestamp": "2026-02-21T10:46:17.995513",
+  "xie_path": "master_dataset_new.csv",
+  "ours_path": "artifacts\\datasets\\xie_benchmark_comparison.csv",
+  "cohort_sizes": {
+    "xie": 425087,
+    "ours": 424385,
+    "xie_duplicates": 0,
+    "ours_duplicates": 0
+  },
+  "common_stays": 424385,
+  "outcome_concordance": {
+    "outcome_hospitalization": {
+      "xie_prevalence": 0.4778,
+      "ours_prevalence": 0.4778,
+      "delta": 0.0,
+      "kappa": 1.0,
+      "confusion_matrix": [
+        [
+          221627,
+          0
+        ],
+        [
+          0,
+          202758
+        ]
+      ]
+    },
+    "outcome_icu_transfer_12h": {
+      "xie_prevalence": 0.0622,
+      "ours_prevalence": 0.0578,
+      "delta": -0.0044,
+      "kappa": 0.961,
+      "confusion_matrix": [
+        [
+          397992,
+          0
+        ],
+        [
+          1869,
+          24524
+        ]
+      ]
+    },
+    "outcome_critical": {
+      "xie_prevalence": 0.0658,
+      "ours_prevalence": 0.0634,
+      "delta": -0.0025,
+      "kappa": 0.9604,
+      "confusion_matrix": [
+        [
+          395958,
+          494
+        ],
+        [
+          1538,
+          26395
+        ]
+      ]
+    },
+    "outcome_ed_revisit_3d": {
+      "xie_prevalence": 0.0357,
+      "ours_prevalence": 0.0343,
+      "delta": -0.0014,
+      "kappa": 0.9794,
+      "confusion_matrix": [
+        [
+          409243,
+          2
+        ],
+        [
+          588,
+          14552
+        ]
+      ]
+    },
+    "outcome_inhospital_mortality": {
+      "xie_prevalence": 0.0106,
+      "ours_prevalence": 0.0103,
+      "delta": -0.0003,
+      "kappa": 0.9839,
+      "confusion_matrix": [
+        [
+          419869,
+          0
+        ],
+        [
+          142,
+          4374
+        ]
+      ]
+    }
+  },
+  "model_performance": {
+    "outcome_hospitalization": {
+      "xie": {
+        "LR": {
+          "AUROC": 0.7189,
+          "AUROC_CI_low": 0.7153,
+          "AUROC_CI_high": 0.7224,
+          "AUPRC": 0.6846,
+          "Brier": 0.2129
+        },
+        "GBM": {
+          "AUROC": 0.7361,
+          "AUROC_CI_low": 0.7326,
+          "AUROC_CI_high": 0.7392,
+          "AUPRC": 0.7101,
+          "Brier": 0.2068
+        }
+      },
+      "ours": {
+        "LR": {
+          "AUROC": 0.7196,
+          "AUROC_CI_low": 0.7162,
+          "AUROC_CI_high": 0.7232,
+          "AUPRC": 0.6846,
+          "Brier": 0.2125
+        },
+        "GBM": {
+          "AUROC": 0.7359,
+          "AUROC_CI_low": 0.7324,
+          "AUROC_CI_high": 0.7392,
+          "AUPRC": 0.7088,
+          "Brier": 0.2066
+        }
+      }
+    },
+    "outcome_icu_transfer_12h": {
+      "xie": {
+        "LR": {
+          "AUROC": 0.7541,
+          "AUROC_CI_low": 0.7448,
+          "AUROC_CI_high": 0.7634,
+          "AUPRC": 0.1736,
+          "Brier": 0.0391
+        },
+        "GBM": {
+          "AUROC": 0.7968,
+          "AUROC_CI_low": 0.789,
+          "AUROC_CI_high": 0.8038,
+          "AUPRC": 0.2368,
+          "Brier": 0.0373
+        }
+      },
+      "ours": {
+        "LR": {
+          "AUROC": 0.7655,
+          "AUROC_CI_low": 0.7566,
+          "AUROC_CI_high": 0.7739,
+          "AUPRC": 0.175,
+          "Brier": 0.0366
+        },
+        "GBM": {
+          "AUROC": 0.8067,
+          "AUROC_CI_low": 0.7992,
+          "AUROC_CI_high": 0.814,
+          "AUPRC": 0.2362,
+          "Brier": 0.035
+        }
+      }
+    },
+    "outcome_critical": {
+      "xie": {
+        "LR": {
+          "AUROC": 0.7612,
+          "AUROC_CI_low": 0.7528,
+          "AUROC_CI_high": 0.7707,
+          "AUPRC": 0.1872,
+          "Brier": 0.0415
+        },
+        "GBM": {
+          "AUROC": 0.8007,
+          "AUROC_CI_low": 0.7932,
+          "AUROC_CI_high": 0.8078,
+          "AUPRC": 0.2506,
+          "Brier": 0.0396
+        }
+      },
+      "ours": {
+        "LR": {
+          "AUROC": 0.7613,
+          "AUROC_CI_low": 0.7534,
+          "AUROC_CI_high": 0.7697,
+          "AUPRC": 0.1857,
+          "Brier": 0.041
+        },
+        "GBM": {
+          "AUROC": 0.8,
+          "AUROC_CI_low": 0.793,
+          "AUROC_CI_high": 0.8073,
+          "AUPRC": 0.2458,
+          "Brier": 0.0392
+        }
+      }
+    },
+    "outcome_ed_revisit_3d": {
+      "xie": {
+        "LR": {
+          "AUROC": 0.539,
+          "AUROC_CI_low": 0.5292,
+          "AUROC_CI_high": 0.5491,
+          "AUPRC": 0.0395,
+          "Brier": 0.035
+        },
+        "GBM": {
+          "AUROC": 0.5617,
+          "AUROC_CI_low": 0.5516,
+          "AUROC_CI_high": 0.5722,
+          "AUPRC": 0.044,
+          "Brier": 0.0349
+        }
+      },
+      "ours": {
+        "LR": {
+          "AUROC": 0.5398,
+          "AUROC_CI_low": 0.5305,
+          "AUROC_CI_high": 0.5493,
+          "AUPRC": 0.0372,
+          "Brier": 0.033
+        },
+        "GBM": {
+          "AUROC": 0.5737,
+          "AUROC_CI_low": 0.5636,
+          "AUROC_CI_high": 0.5853,
+          "AUPRC": 0.0448,
+          "Brier": 0.0329
+        }
+      }
+    },
+    "outcome_inhospital_mortality": {
+      "xie": {
+        "LR": {
+          "AUROC": 0.8476,
+          "AUROC_CI_low": 0.8328,
+          "AUROC_CI_high": 0.8624,
+          "AUPRC": 0.043,
+          "Brier": 0.0065
+        },
+        "GBM": {
+          "AUROC": 0.8721,
+          "AUROC_CI_low": 0.8602,
+          "AUROC_CI_high": 0.8848,
+          "AUPRC": 0.0567,
+          "Brier": 0.0065
+        }
+      },
+      "ours": {
+        "LR": {
+          "AUROC": 0.8506,
+          "AUROC_CI_low": 0.8368,
+          "AUROC_CI_high": 0.8655,
+          "AUPRC": 0.044,
+          "Brier": 0.0064
+        },
+        "GBM": {
+          "AUROC": 0.8688,
+          "AUROC_CI_low": 0.8551,
+          "AUROC_CI_high": 0.8816,
+          "AUPRC": 0.0555,
+          "Brier": 0.0063
+        }
+      }
+    }
+  },
+  "feature_quality": {
+    "age": {
+      "xie_missing_pct": 0.0,
+      "ours_missing_pct": 0.0,
+      "delta": 0.0
+    },
+    "triage_temperature": {
+      "xie_missing_pct": 5.4,
+      "ours_missing_pct": 4.79,
+      "delta": -0.61
+    },
+    "triage_heartrate": {
+      "xie_missing_pct": 3.92,
+      "ours_missing_pct": 3.02,
+      "delta": -0.9
+    },
+    "triage_resprate": {
+      "xie_missing_pct": 4.68,
+      "ours_missing_pct": 3.61,
+      "delta": -1.08
+    },
+    "triage_o2sat": {
+      "xie_missing_pct": 4.74,
+      "ours_missing_pct": 3.78,
+      "delta": -0.95
+    },
+    "triage_sbp": {
+      "xie_missing_pct": 4.2,
+      "ours_missing_pct": 3.27,
+      "delta": -0.93
+    },
+    "triage_dbp": {
+      "xie_missing_pct": 4.39,
+      "ours_missing_pct": 3.42,
+      "delta": -0.97
+    }
+  },
+  "summary": {
+    "cohort_alignment": "424,385 / 425,087 stays aligned",
+    "outcome_kappa_mean": 0.9769,
+    "outcome_kappa_min": 0.9604,
+    "superior_traits": {
+      "lower_missingness": true,
+      "no_duplicates": false,
+      "deterministic": "Verified via hash (not computed here)"
+    }
+  }
+}

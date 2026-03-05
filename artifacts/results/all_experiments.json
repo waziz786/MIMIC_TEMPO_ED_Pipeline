@@ -1,0 +1,477 @@
+{
+  "exp1_multi_window": {
+    "W1": {
+      "n_features": 18,
+      "n_samples": 75000,
+      "outcome_rate": 0.0638,
+      "LR": {
+        "auroc_mean": 0.8833,
+        "auroc_std": 0.0043,
+        "auprc_mean": 0.3965,
+        "auprc_std": 0.0134,
+        "f1_mean": 0.3519,
+        "n_folds": 5
+      },
+      "XGB": {
+        "auroc_mean": 0.9035,
+        "auroc_std": 0.0025,
+        "auprc_mean": 0.5203,
+        "auprc_std": 0.0088,
+        "f1_mean": 0.4327,
+        "n_folds": 5
+      }
+    },
+    "W6": {
+      "n_features": 50,
+      "n_samples": 75000,
+      "outcome_rate": 0.0638,
+      "LR": {
+        "auroc_mean": 0.9179,
+        "auroc_std": 0.0046,
+        "auprc_mean": 0.5509,
+        "auprc_std": 0.0136,
+        "f1_mean": 0.4311,
+        "n_folds": 5
+      },
+      "XGB": {
+        "auroc_mean": 0.9351,
+        "auroc_std": 0.0027,
+        "auprc_mean": 0.6588,
+        "auprc_std": 0.0106,
+        "f1_mean": 0.5633,
+        "n_folds": 5
+      }
+    },
+    "W24": {
+      "n_features": 59,
+      "n_samples": 75000,
+      "outcome_rate": 0.0638,
+      "LR": {
+        "auroc_mean": 0.9529,
+        "auroc_std": 0.0018,
+        "auprc_mean": 0.638,
+        "auprc_std": 0.0086,
+        "f1_mean": 0.4657,
+        "n_folds": 5
+      },
+      "XGB": {
+        "auroc_mean": 0.9644,
+        "auroc_std": 0.0011,
+        "auprc_mean": 0.7549,
+        "auprc_std": 0.0055,
+        "f1_mean": 0.6486,
+        "n_folds": 5
+      }
+    }
+  },
+  "exp2_multi_outcome": {
+    "det_24h": {
+      "n_samples": 75000,
+      "outcome_rate": 0.0638,
+      "LR": {
+        "auroc_mean": 0.9179,
+        "auroc_std": 0.0046,
+        "auprc_mean": 0.5509,
+        "auprc_std": 0.0136,
+        "f1_mean": 0.4311,
+        "n_folds": 5
+      },
+      "XGB": {
+        "auroc_mean": 0.9351,
+        "auroc_std": 0.0027,
+        "auprc_mean": 0.6588,
+        "auprc_std": 0.0106,
+        "f1_mean": 0.5633,
+        "n_folds": 5
+      }
+    },
+    "icu_24h": {
+      "n_samples": 75000,
+      "outcome_rate": 0.1331,
+      "LR": {
+        "auroc_mean": 0.8808,
+        "auroc_std": 0.0044,
+        "auprc_mean": 0.6209,
+        "auprc_std": 0.0083,
+        "f1_mean": 0.5259,
+        "n_folds": 5
+      },
+      "XGB": {
+        "auroc_mean": 0.9006,
+        "auroc_std": 0.0045,
+        "auprc_mean": 0.6981,
+        "auprc_std": 0.0075,
+        "f1_mean": 0.5983,
+        "n_folds": 5
+      }
+    },
+    "death_24h": {
+      "n_samples": 75000,
+      "outcome_rate": 0.0029,
+      "LR": {
+        "auroc_mean": 0.9246,
+        "auroc_std": 0.0056,
+        "auprc_mean": 0.0711,
+        "auprc_std": 0.0257,
+        "f1_mean": 0.0379,
+        "n_folds": 5
+      },
+      "XGB": {
+        "auroc_mean": 0.9325,
+        "auroc_std": 0.0097,
+        "auprc_mean": 0.0848,
+        "auprc_std": 0.0269,
+        "f1_mean": 0.0548,
+        "n_folds": 5
+      }
+    },
+    "vent_24h": {
+      "n_samples": 75000,
+      "outcome_rate": 0.0415,
+      "LR": {
+        "auroc_mean": 0.9197,
+        "auroc_std": 0.0036,
+        "auprc_mean": 0.4416,
+        "auprc_std": 0.026,
+        "f1_mean": 0.326,
+        "n_folds": 5
+      },
+      "XGB": {
+        "auroc_mean": 0.9388,
+        "auroc_std": 0.0024,
+        "auprc_mean": 0.6039,
+        "auprc_std": 0.0189,
+        "f1_mean": 0.5186,
+        "n_folds": 5
+      }
+    },
+    "pressor_24h": {
+      "n_samples": 75000,
+      "outcome_rate": 0.0284,
+      "LR": {
+        "auroc_mean": 0.9329,
+        "auroc_std": 0.0042,
+        "auprc_mean": 0.4353,
+        "auprc_std": 0.0286,
+        "f1_mean": 0.2741,
+        "n_folds": 5
+      },
+      "XGB": {
+        "auroc_mean": 0.9452,
+        "auroc_std": 0.0046,
+        "auprc_mean": 0.5264,
+        "auprc_std": 0.0219,
+        "f1_mean": 0.4651,
+        "n_folds": 5
+      }
+    },
+    "cardiac_arrest_hosp": {
+      "n_samples": 75000,
+      "outcome_rate": 0.0024,
+      "LR": {
+        "auroc_mean": 0.8189,
+        "auroc_std": 0.0368,
+        "auprc_mean": 0.0476,
+        "auprc_std": 0.0242,
+        "f1_mean": 0.0171,
+        "n_folds": 5
+      },
+      "XGB": {
+        "auroc_mean": 0.8182,
+        "auroc_std": 0.0373,
+        "auprc_mean": 0.0564,
+        "auprc_std": 0.0212,
+        "f1_mean": 0.0949,
+        "n_folds": 5
+      }
+    },
+    "acs_hosp": {
+      "n_samples": 75000,
+      "outcome_rate": 0.0305,
+      "LR": {
+        "auroc_mean": 0.8354,
+        "auroc_std": 0.0056,
+        "auprc_mean": 0.2234,
+        "auprc_std": 0.0115,
+        "f1_mean": 0.154,
+        "n_folds": 5
+      },
+      "XGB": {
+        "auroc_mean": 0.8564,
+        "auroc_std": 0.0055,
+        "auprc_mean": 0.2842,
+        "auprc_std": 0.0179,
+        "f1_mean": 0.2004,
+        "n_folds": 5
+      }
+    }
+  },
+  "exp3_ecg_value": {
+    "cardiac_arrest_hosp": {
+      "without_ecg": {
+        "n_features": 50,
+        "LR": {
+          "auroc_mean": 0.8189,
+          "auroc_std": 0.0368,
+          "auprc_mean": 0.0476,
+          "auprc_std": 0.0242,
+          "f1_mean": 0.0171,
+          "n_folds": 5
+        },
+        "XGB": {
+          "auroc_mean": 0.8182,
+          "auroc_std": 0.0373,
+          "auprc_mean": 0.0564,
+          "auprc_std": 0.0212,
+          "f1_mean": 0.0949,
+          "n_folds": 5
+        }
+      },
+      "with_ecg": {
+        "n_features": 83,
+        "LR": {
+          "auroc_mean": 0.8418,
+          "auroc_std": 0.0319,
+          "auprc_mean": 0.0584,
+          "auprc_std": 0.0291,
+          "f1_mean": 0.0189,
+          "n_folds": 5
+        },
+        "XGB": {
+          "auroc_mean": 0.8388,
+          "auroc_std": 0.0365,
+          "auprc_mean": 0.0737,
+          "auprc_std": 0.0254,
+          "f1_mean": 0.0972,
+          "n_folds": 5
+        }
+      },
+      "delta_lr_auroc": 0.0229,
+      "delta_xgb_auroc": 0.0206
+    },
+    "acs_hosp": {
+      "without_ecg": {
+        "n_features": 50,
+        "LR": {
+          "auroc_mean": 0.8354,
+          "auroc_std": 0.0056,
+          "auprc_mean": 0.2234,
+          "auprc_std": 0.0115,
+          "f1_mean": 0.154,
+          "n_folds": 5
+        },
+        "XGB": {
+          "auroc_mean": 0.8564,
+          "auroc_std": 0.0055,
+          "auprc_mean": 0.2842,
+          "auprc_std": 0.0179,
+          "f1_mean": 0.2004,
+          "n_folds": 5
+        }
+      },
+      "with_ecg": {
+        "n_features": 83,
+        "LR": {
+          "auroc_mean": 0.8554,
+          "auroc_std": 0.0073,
+          "auprc_mean": 0.2395,
+          "auprc_std": 0.0101,
+          "f1_mean": 0.1706,
+          "n_folds": 5
+        },
+        "XGB": {
+          "auroc_mean": 0.8819,
+          "auroc_std": 0.0099,
+          "auprc_mean": 0.3291,
+          "auprc_std": 0.0178,
+          "f1_mean": 0.2383,
+          "n_folds": 5
+        }
+      },
+      "delta_lr_auroc": 0.02,
+      "delta_xgb_auroc": 0.0255
+    },
+    "det_24h": {
+      "without_ecg": {
+        "n_features": 50,
+        "LR": {
+          "auroc_mean": 0.9179,
+          "auroc_std": 0.0046,
+          "auprc_mean": 0.5509,
+          "auprc_std": 0.0136,
+          "f1_mean": 0.4311,
+          "n_folds": 5
+        },
+        "XGB": {
+          "auroc_mean": 0.9351,
+          "auroc_std": 0.0027,
+          "auprc_mean": 0.6588,
+          "auprc_std": 0.0106,
+          "f1_mean": 0.5633,
+          "n_folds": 5
+        }
+      },
+      "with_ecg": {
+        "n_features": 83,
+        "LR": {
+          "auroc_mean": 0.8825,
+          "auroc_std": 0.0044,
+          "auprc_mean": 0.6273,
+          "auprc_std": 0.0042,
+          "f1_mean": 0.5283,
+          "n_folds": 5
+        },
+        "XGB": {
+          "auroc_mean": 0.9007,
+          "auroc_std": 0.0031,
+          "auprc_mean": 0.7006,
+          "auprc_std": 0.0078,
+          "f1_mean": 0.5995,
+          "n_folds": 5
+        }
+      },
+      "delta_lr_auroc": -0.0354,
+      "delta_xgb_auroc": -0.0344
+    }
+  },
+  "exp4_leakage": {
+    "part_a_matched_leakage": {
+      "w6_normal": {
+        "n_features": 43,
+        "n_features_total": 50,
+        "LR": {
+          "auroc_mean": 0.913,
+          "auroc_std": 0.0043,
+          "auprc_mean": 0.5376,
+          "auprc_std": 0.0111,
+          "f1_mean": 0.4139,
+          "n_folds": 5
+        },
+        "XGB": {
+          "auroc_mean": 0.9347,
+          "auroc_std": 0.0029,
+          "auprc_mean": 0.6565,
+          "auprc_std": 0.0085,
+          "f1_mean": 0.5609,
+          "n_folds": 5
+        }
+      },
+      "w24_leakage": {
+        "n_features": 43,
+        "n_features_total": 59,
+        "LR": {
+          "auroc_mean": 0.9508,
+          "auroc_std": 0.002,
+          "auprc_mean": 0.6217,
+          "auprc_std": 0.0078,
+          "f1_mean": 0.4567,
+          "n_folds": 5
+        },
+        "XGB": {
+          "auroc_mean": 0.9627,
+          "auroc_std": 0.0012,
+          "auprc_mean": 0.7438,
+          "auprc_std": 0.0042,
+          "f1_mean": 0.6435,
+          "n_folds": 5
+        }
+      },
+      "mapped_features_used": 43,
+      "unmapped_w6_dropped": [
+        "dbp_min_6h",
+        "hr_std_6h",
+        "temp_min_6h",
+        "sbp_cv_6h",
+        "hr_range_6h",
+        "missing_lactate_6h",
+        "missing_troponin_6h"
+      ],
+      "lr_inflation_pct": 4.14,
+      "xgb_inflation_pct": 3.0
+    },
+    "part_b_legitimate_gain": {
+      "w1": {
+        "n_features": 18,
+        "LR": {
+          "auroc_mean": 0.8833,
+          "auroc_std": 0.0043,
+          "auprc_mean": 0.3965,
+          "auprc_std": 0.0134,
+          "f1_mean": 0.3519,
+          "n_folds": 5
+        },
+        "XGB": {
+          "auroc_mean": 0.9035,
+          "auroc_std": 0.0025,
+          "auprc_mean": 0.5203,
+          "auprc_std": 0.0088,
+          "f1_mean": 0.4327,
+          "n_folds": 5
+        }
+      },
+      "w6": {
+        "n_features": 50,
+        "LR": {
+          "auroc_mean": 0.9179,
+          "auroc_std": 0.0046,
+          "auprc_mean": 0.5509,
+          "auprc_std": 0.0136,
+          "f1_mean": 0.4311,
+          "n_folds": 5
+        },
+        "XGB": {
+          "auroc_mean": 0.9351,
+          "auroc_std": 0.0027,
+          "auprc_mean": 0.6588,
+          "auprc_std": 0.0106,
+          "f1_mean": 0.5633,
+          "n_folds": 5
+        }
+      },
+      "lr_gain_pct": 3.92,
+      "xgb_gain_pct": 3.5
+    },
+    "part_c_negative_control": {
+      "w6_shuffled": {
+        "LR": {
+          "auroc_mean": 0.4973,
+          "auroc_std": 0.0085,
+          "auprc_mean": 0.0646,
+          "auprc_std": 0.0018,
+          "f1_mean": 0.111,
+          "n_folds": 5
+        },
+        "XGB": {
+          "auroc_mean": 0.5009,
+          "auroc_std": 0.0114,
+          "auprc_mean": 0.0655,
+          "auprc_std": 0.0026,
+          "f1_mean": 0.0,
+          "n_folds": 5
+        }
+      },
+      "w24_shuffled": {
+        "LR": {
+          "auroc_mean": 0.4964,
+          "auroc_std": 0.0079,
+          "auprc_mean": 0.0642,
+          "auprc_std": 0.0011,
+          "f1_mean": 0.1097,
+          "n_folds": 5
+        },
+        "XGB": {
+          "auroc_mean": 0.4971,
+          "auroc_std": 0.0082,
+          "auprc_mean": 0.0644,
+          "auprc_std": 0.0019,
+          "f1_mean": 0.0004,
+          "n_folds": 5
+        }
+      },
+      "lr_diff_shuffled": 0.0009,
+      "xgb_diff_shuffled": 0.0038,
+      "lr_diff_real": 0.0378,
+      "xgb_diff_real": 0.028
+    }
+  }
+}

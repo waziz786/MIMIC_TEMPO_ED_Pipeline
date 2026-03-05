@@ -1,0 +1,38 @@
+{
+  "det_24h_W1": {
+    "n": 75000,
+    "features": 18,
+    "prevalence": 6.31,
+    "lr_auroc": 0.847,
+    "lr_auprc": 0.356,
+    "xgb_auroc": 0.903,
+    "xgb_auprc": 0.518
+  },
+  "det_24h_W6": {
+    "n": 75000,
+    "features": 54,
+    "prevalence": 4.04,
+    "lr_auroc": 0.893,
+    "lr_auprc": 0.313,
+    "xgb_auroc": 0.906,
+    "xgb_auprc": 0.37
+  },
+  "det_24h_W24": {
+    "n": 75000,
+    "features": 59,
+    "prevalence": 0.81,
+    "lr_auroc": 0.891,
+    "lr_auprc": 0.059,
+    "xgb_auroc": 0.862,
+    "xgb_auprc": 0.056
+  },
+  "icu_24h_W6": {
+    "n": 75000,
+    "features": 54,
+    "prevalence": 2.47,
+    "lr_auroc": 0.865,
+    "lr_auprc": 0.165,
+    "xgb_auroc": 0.881,
+    "xgb_auprc": 0.318
+  }
+}

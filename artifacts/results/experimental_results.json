@@ -1,0 +1,398 @@
+{
+  "ed_w1_det24_all": {
+    "shape": [
+      424952,
+      25
+    ],
+    "outcome_rate": 0.0638001468401137,
+    "outcome_col": "y",
+    "n_features": 24,
+    "results": {
+      "LR": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      },
+      "XGB": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      }
+    }
+  },
+  "ed_w6_det24_all": {
+    "shape": [
+      424952,
+      57
+    ],
+    "outcome_rate": 0.0638001468401137,
+    "outcome_col": "y",
+    "n_features": 56,
+    "results": {
+      "LR": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      },
+      "XGB": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      }
+    }
+  },
+  "ed_w24_det24_all": {
+    "shape": [
+      424952,
+      66
+    ],
+    "outcome_rate": 0.0638001468401137,
+    "outcome_col": "y",
+    "n_features": 65,
+    "results": {
+      "LR": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      },
+      "XGB": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      }
+    }
+  },
+  "ed_w6_icu24_admitted": {
+    "shape": [
+      202990,
+      57
+    ],
+    "outcome_rate": 0.1331198581210897,
+    "outcome_col": "y",
+    "n_features": 56,
+    "results": {
+      "LR": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      },
+      "XGB": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      }
+    }
+  },
+  "ed_w6_death24_admitted": {
+    "shape": [
+      202990,
+      57
+    ],
+    "outcome_rate": 0.00293117887580669,
+    "outcome_col": "y",
+    "n_features": 56,
+    "results": {
+      "LR": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      },
+      "XGB": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      }
+    }
+  },
+  "ed_w6_vent24_admitted": {
+    "shape": [
+      202990,
+      57
+    ],
+    "outcome_rate": 0.04148480220700527,
+    "outcome_col": "y",
+    "n_features": 56,
+    "results": {
+      "LR": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      },
+      "XGB": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      }
+    }
+  },
+  "ed_w6_pressor24_admitted": {
+    "shape": [
+      202990,
+      57
+    ],
+    "outcome_rate": 0.028439824621902556,
+    "outcome_col": "y",
+    "n_features": 56,
+    "results": {
+      "LR": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      },
+      "XGB": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      }
+    }
+  },
+  "ed_w6_cardiac_arrest_admitted": {
+    "shape": [
+      202990,
+      57
+    ],
+    "outcome_rate": 0.002438543770629095,
+    "outcome_col": "y",
+    "n_features": 56,
+    "results": {
+      "LR": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      },
+      "XGB": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      }
+    }
+  },
+  "ed_w6_acs_admitted": {
+    "shape": [
+      202990,
+      57
+    ],
+    "outcome_rate": 0.030518744765752007,
+    "outcome_col": "y",
+    "n_features": 56,
+    "results": {
+      "LR": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      },
+      "XGB": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      }
+    }
+  },
+  "ed_w6_cardiac_arrest_ecg_admitted": {
+    "shape": [
+      202990,
+      90
+    ],
+    "outcome_rate": 0.002438543770629095,
+    "outcome_col": "y",
+    "n_features": 89,
+    "results": {
+      "LR": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      },
+      "XGB": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      }
+    }
+  },
+  "ed_w6_acs_ecg_admitted": {
+    "shape": [
+      202990,
+      90
+    ],
+    "outcome_rate": 0.030518744765752007,
+    "outcome_col": "y",
+    "n_features": 89,
+    "results": {
+      "LR": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      },
+      "XGB": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      }
+    }
+  },
+  "ed_w6_det24_admitted_ecg": {
+    "shape": [
+      202990,
+      90
+    ],
+    "outcome_rate": 0.13356322971574955,
+    "outcome_col": "y",
+    "n_features": 89,
+    "results": {
+      "LR": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      },
+      "XGB": {
+        "auroc_mean": 0.0,
+        "auroc_std": 0.0,
+        "auprc_mean": 0.0,
+        "auprc_std": 0.0,
+        "f1_mean": 0.0,
+        "precision_mean": 0.0,
+        "recall_mean": 0.0,
+        "total_time": 0.0,
+        "n_folds_completed": 0
+      }
+    }
+  }
+}

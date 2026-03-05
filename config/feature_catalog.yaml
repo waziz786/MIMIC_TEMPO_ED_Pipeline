@@ -1,0 +1,172 @@
+# Feature Basket Catalog
+# Defines feature windows and which features belong to each
+
+# Time Windows
+windows:
+  W1:
+    hours: 1
+    description: "First hour (triage + immediate vitals)"
+  W6:
+    hours: 6
+    description: "First 6 hours (ED workup period)"
+  W24:
+    hours: 24
+    description: "First 24 hours (comprehensive)"
+
+# Feature Blocks
+# Each block defines a logical group of features and which windows include them
+
+feature_blocks:
+  # Core Demographics (always included)
+  demographics:
+    description: "Age, sex, anchor year"
+    include_in: [W1, W6, W24]
+    features:
+      - age
+      - gender
+      - anchor_age
+      - anchor_year
+
+  # Triage Vitals (earliest available)
+  triage_vitals:
+    description: "Initial triage vital signs"
+    include_in: [W1, W6, W24]
+    features:
+      - triage_temperature
+      - triage_heartrate
+      - triage_resprate
+      - triage_o2sat
+      - triage_sbp
+      - triage_dbp
+      - triage_pain
+      - triage_acuity
+
+  # First Hour Vitals (charted)
+  vitals_first_hour:
+    description: "First charted vital signs within 1 hour"
+    include_in: [W1, W6, W24]
+    features:
+      - temp_first
+      - hr_first
+      - rr_first
+      - spo2_first
+      - sbp_first
+      - dbp_first
+
+  # Vital Sign Summary Statistics (requires time)
+  vitals_summary_6h:
+    description: "Vital sign summary over 6 hours"
+    include_in: [W6, W24]
+    features:
+      - sbp_min
+      - sbp_max
+      - sbp_mean
+      - hr_min
+      - hr_max
+      - hr_mean
+      - rr_max
+      - spo2_min
+      - temp_max
+
+  vitals_summary_24h:
+    description: "Vital sign summary over 24 hours"
+    include_in: [W24]
+    features:
+      - sbp_min_24h
+      - sbp_max_24h
+      - hr_max_24h
+      - spo2_min_24h
+
+  # Early Laboratory Values
+  labs_critical:
+    description: "Critical lab values (first available in window)"
+    include_in: [W6, W24]
+    features:
+      - lactate_first
+      - troponin_first
+      - creatinine_first
+      - potassium_first
+      - sodium_first
+      - bicarbonate_first
+      - wbc_first
+      - hemoglobin_first
+      - platelet_first
+
+  # Extended Lab Panel
+  labs_extended:
+    description: "Extended lab panel (24h window)"
+    include_in: [W24]
+    features:
+      - glucose_first
+      - bun_first
+      - alt_first
+      - ast_first
+      - bilirubin_first
+      - inr_first
+      - ptt_first
+      - lactate_max
+      - creatinine_max
+
+  # Chief Complaint / Reason for Visit
+  clinical_presentation:
+    description: "Chief complaint and triage info"
+    include_in: [W1, W6, W24]
+    features:
+      - chief_complaint
+      - arrival_transport
+
+  # ED Process Metrics
+  ed_process:
+    description: "ED throughput and process metrics"
+    include_in: [W6, W24]
+    features:
+      - ed_los_hours
+      - time_to_first_lab
+      - time_to_first_med
+
+  # Prior History (from admission/transfers)
+  prior_history:
+    description: "Previous admissions and comorbidities"
+    include_in: [W1, W6, W24]
+    features:
+      - prev_admits_1yr
+      - prev_ed_visits_1yr
+      - charlson_score
+
+# Feature Engineering Rules
+feature_engineering:
+  derived_features:
+    - name: "shock_index"
+      formula: "hr / sbp"
+      windows: [W1, W6, W24]
+    
+    - name: "map"
+      formula: "(sbp + 2*dbp) / 3"
+      windows: [W1, W6, W24]
+    
+    - name: "delta_sbp"
+      formula: "sbp_first - sbp_min"
+      windows: [W6, W24]
+    
+    - name: "delta_hr"
+      formula: "hr_max - hr_first"
+      windows: [W6, W24]
+
+  missing_indicators:
+    enabled: true
+    threshold: 0.5  # Create missing indicator if >50% missing
+
+# Quality Filters
+quality_filters:
+  vital_ranges:
+    sbp: [50, 250]
+    dbp: [20, 150]
+    hr: [20, 200]
+    rr: [4, 50]
+    spo2: [50, 100]
+    temp: [30, 42]
+  
+  lab_ranges:
+    lactate: [0, 30]
+    troponin: [0, 10000]
+    creatinine: [0, 20]

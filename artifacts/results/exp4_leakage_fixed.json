@@ -1,0 +1,228 @@
+{
+  "w6_normal": {
+    "n_features": 43,
+    "n_features_total": 50,
+    "LR": {
+      "auroc_mean": 0.9127,
+      "auroc_std": 0.0043,
+      "auprc_mean": 0.5385,
+      "auprc_std": 0.0083,
+      "f1_mean": 0.413,
+      "n_folds": 5
+    },
+    "XGB": {
+      "auroc_mean": 0.9349,
+      "auroc_std": 0.0025,
+      "auprc_mean": 0.653,
+      "auprc_std": 0.0092,
+      "f1_mean": 0.564,
+      "n_folds": 5
+    }
+  },
+  "w24_leakage": {
+    "n_features": 43,
+    "n_features_total": 59,
+    "LR": {
+      "auroc_mean": 0.95,
+      "auroc_std": 0.0019,
+      "auprc_mean": 0.6201,
+      "auprc_std": 0.0078,
+      "f1_mean": 0.4592,
+      "n_folds": 5
+    },
+    "XGB": {
+      "auroc_mean": 0.9623,
+      "auroc_std": 0.0016,
+      "auprc_mean": 0.7394,
+      "auprc_std": 0.0051,
+      "f1_mean": 0.6419,
+      "n_folds": 5
+    }
+  },
+  "mapped_features_used": 43,
+  "unmapped_w6_dropped": [
+    "dbp_min_6h",
+    "hr_std_6h",
+    "temp_min_6h",
+    "sbp_cv_6h",
+    "hr_range_6h",
+    "missing_lactate_6h",
+    "missing_troponin_6h"
+  ],
+  "feature_mapping": [
+    {
+      "w6": "age_at_ed",
+      "w24": "age_at_ed"
+    },
+    {
+      "w6": "gender",
+      "w24": "gender"
+    },
+    {
+      "w6": "ed_los_hours",
+      "w24": "ed_los_hours"
+    },
+    {
+      "w6": "arrival_transport",
+      "w24": "arrival_transport"
+    },
+    {
+      "w6": "race",
+      "w24": "race"
+    },
+    {
+      "w6": "sbp_min_6h",
+      "w24": "sbp_min_24h"
+    },
+    {
+      "w6": "sbp_max_6h",
+      "w24": "sbp_max_24h"
+    },
+    {
+      "w6": "sbp_mean_6h",
+      "w24": "sbp_mean_24h"
+    },
+    {
+      "w6": "sbp_std_6h",
+      "w24": "sbp_std_24h"
+    },
+    {
+      "w6": "hr_min_6h",
+      "w24": "hr_min_24h"
+    },
+    {
+      "w6": "hr_max_6h",
+      "w24": "hr_max_24h"
+    },
+    {
+      "w6": "hr_mean_6h",
+      "w24": "hr_mean_24h"
+    },
+    {
+      "w6": "rr_max_6h",
+      "w24": "rr_max_24h"
+    },
+    {
+      "w6": "rr_mean_6h",
+      "w24": "rr_mean_24h"
+    },
+    {
+      "w6": "spo2_min_6h",
+      "w24": "spo2_min_24h"
+    },
+    {
+      "w6": "spo2_mean_6h",
+      "w24": "spo2_mean_24h"
+    },
+    {
+      "w6": "temp_max_6h",
+      "w24": "temp_max_24h"
+    },
+    {
+      "w6": "n_vitalsign_measurements_6h",
+      "w24": "n_vitalsign_measurements_24h"
+    },
+    {
+      "w6": "lactate_first_6h",
+      "w24": "lactate_first_24h"
+    },
+    {
+      "w6": "troponin_first_6h",
+      "w24": "troponin_first_24h"
+    },
+    {
+      "w6": "is_hs_troponin_6h",
+      "w24": "is_hs_troponin_24h"
+    },
+    {
+      "w6": "creatinine_first_6h",
+      "w24": "creatinine_first_24h"
+    },
+    {
+      "w6": "potassium_first_6h",
+      "w24": "potassium_first_24h"
+    },
+    {
+      "w6": "sodium_first_6h",
+      "w24": "sodium_first_24h"
+    },
+    {
+      "w6": "bicarbonate_first_6h",
+      "w24": "bicarbonate_first_24h"
+    },
+    {
+      "w6": "wbc_first_6h",
+      "w24": "wbc_first_24h"
+    },
+    {
+      "w6": "hemoglobin_first_6h",
+      "w24": "hemoglobin_first_24h"
+    },
+    {
+      "w6": "platelet_first_6h",
+      "w24": "platelet_first_24h"
+    },
+    {
+      "w6": "time_to_first_lab_hours",
+      "w24": "time_to_first_lab_hours"
+    },
+    {
+      "w6": "time_to_first_med_hours",
+      "w24": "time_to_first_med_hours"
+    },
+    {
+      "w6": "prev_admits_1yr",
+      "w24": "prev_admits_1yr"
+    },
+    {
+      "w6": "prev_ed_visits_1yr",
+      "w24": "prev_ed_visits_1yr"
+    },
+    {
+      "w6": "missing_lactate_first_6h",
+      "w24": "missing_lactate_first_24h"
+    },
+    {
+      "w6": "missing_troponin_first_6h",
+      "w24": "missing_troponin_first_24h"
+    },
+    {
+      "w6": "missing_is_hs_troponin_6h",
+      "w24": "missing_is_hs_troponin_24h"
+    },
+    {
+      "w6": "missing_creatinine_first_6h",
+      "w24": "missing_creatinine_first_24h"
+    },
+    {
+      "w6": "missing_potassium_first_6h",
+      "w24": "missing_potassium_first_24h"
+    },
+    {
+      "w6": "missing_sodium_first_6h",
+      "w24": "missing_sodium_first_24h"
+    },
+    {
+      "w6": "missing_bicarbonate_first_6h",
+      "w24": "missing_bicarbonate_first_24h"
+    },
+    {
+      "w6": "missing_wbc_first_6h",
+      "w24": "missing_wbc_first_24h"
+    },
+    {
+      "w6": "missing_hemoglobin_first_6h",
+      "w24": "missing_hemoglobin_first_24h"
+    },
+    {
+      "w6": "missing_platelet_first_6h",
+      "w24": "missing_platelet_first_24h"
+    },
+    {
+      "w6": "missing_time_to_first_lab_hours",
+      "w24": "missing_time_to_first_lab_hours"
+    }
+  ],
+  "lr_inflation_pct": 4.09,
+  "xgb_inflation_pct": 2.93
+}

@@ -1,0 +1,172 @@
+# Dataset Definitions
+# Defines which datasets to materialize with their configurations
+#
+# TEMPORAL ALIGNMENT (v2):
+#   All outcomes are now measured AFTER the prediction time
+#   (= end of the feature window), not from ED arrival.
+#
+#   W1 prediction at 1h  → outcome window starts at 1h
+#   W6 prediction at 6h  → outcome window starts at 6h
+#   W24 prediction at 24h → outcome window starts at 24h
+#
+#   This guarantees ZERO temporal overlap between features and labels.
+
+# Global settings
+settings:
+  add_missing_indicators: true
+  missing_threshold: 0.50  # 50% missing to trigger indicator
+  output_dir: "artifacts/datasets"
+
+# Dataset definitions
+# Each dataset specifies:
+#   - window: Feature window (W1, W6, W24)
+#   - outcome: Outcome column name from outcomes table (aligned to prediction time)
+#   - cohort_type: "all", "admitted", or "not_admitted"
+#   - filter: Optional additional SQL filter
+#   - description: Human-readable description
+
+datasets:
+  # ============================================================
+  # PRIMARY DATASETS - All ED Patients (aligned outcomes)
+  # ============================================================
+  
+  ed_w1_icu24_all:
+    window: "W1"
+    outcome: "icu_24h_from_w1"
+    cohort_type: "all"
+    description: "1h features, ICU admission 1h–25h (aligned), all ED patients"
+  
+  ed_w6_det24_all:
+    window: "W6"
+    outcome: "deterioration_24h_from_w6"
+    cohort_type: "all"
+    description: "6h features, composite deterioration 6h–30h (aligned), all ED patients"
+  
+  ed_w24_det48_all:
+    window: "W24"
+    outcome: "deterioration_48h_from_w24"
+    cohort_type: "all"
+    description: "24h features, composite deterioration 24h–72h (aligned), all ED patients"
+  
+  # ============================================================
+  # WINDOW-COMPARISON DATASETS (all use det_24h, aligned)
+  # ============================================================
+  
+  ed_w1_det24_all:
+    window: "W1"
+    outcome: "deterioration_24h_from_w1"
+    cohort_type: "all"
+    description: "1h features, composite deterioration 1h–25h (aligned), all ED patients"
+  
+  ed_w24_det24_all:
+    window: "W24"
+    outcome: "deterioration_24h_from_w24"
+    cohort_type: "all"
+    description: "24h features, composite deterioration 24h–48h (aligned), all ED patients"
+
+  # ============================================================
+  # TRUNCATED (LEAKAGE-PROOF) DATASETS
+  # Uses event-time-truncated features to prevent post-event
+  # data from contaminating aggregate feature statistics.
+  # Combined with aligned outcomes for double protection.
+  # ============================================================
+
+  ed_w6_det24_all_truncated:
+    window: "W6T"
+    outcome: "deterioration_24h_from_w6"
+    cohort_type: "all"
+    description: "6h features TRUNCATED at event time, deterioration 6h–30h (aligned)"
+
+  ed_w24_det48_all_truncated:
+    window: "W24T"
+    outcome: "deterioration_48h_from_w24"
+    cohort_type: "all"
+    description: "24h features TRUNCATED at event time, deterioration 24h–72h (aligned)"
+
+  # ============================================================
+  # ADMITTED-ONLY DATASETS
+  # ============================================================
+  
+  ed_w1_icu24_admitted:
+    window: "W1"
+    outcome: "icu_24h_from_w1"
+    cohort_type: "admitted"
+    description: "1h features, ICU admission 1h–25h (aligned), admitted patients only"
+  
+  ed_w6_det24_admitted:
+    window: "W6"
+    outcome: "deterioration_24h_from_w6"
+    cohort_type: "admitted"
+    description: "6h features, composite deterioration 6h–30h (aligned), admitted patients only"
+  
+  ed_w24_det48_admitted:
+    window: "W24"
+    outcome: "deterioration_48h_from_w24"
+    cohort_type: "admitted"
+    description: "24h features, composite deterioration 24h–72h (aligned), admitted patients only"
+
+  # ============================================================
+  # PHENOTYPING DATASETS (Cardiac-focused)
+  # ============================================================
+  
+  # Cardiac arrest prediction (hospitalization-level, ICD-based — no temporal alignment needed)
+  ed_w6_cardiac_arrest_admitted:
+    window: "W6"
+    outcome: "cardiac_arrest_hosp"
+    cohort_type: "admitted"
+    description: "6h features, cardiac arrest during hospitalization (ICD-based), admitted patients"
+  
+  # Mortality prediction (aligned)
+  ed_w24_mortality_48h_admitted:
+    window: "W24"
+    outcome: "death_48h_from_w24"
+    cohort_type: "admitted"
+    description: "24h features, mortality 24h–72h (aligned), admitted patients"
+  
+  ed_w6_mortality_24h_all:
+    window: "W6"
+    outcome: "death_24h_from_w6"
+    cohort_type: "all"
+    description: "6h features, mortality 6h–30h (aligned), all ED patients"
+  
+  # Vasopressor need (aligned)
+  ed_w6_pressor_24h_admitted:
+    window: "W6"
+    outcome: "pressor_24h_from_w6"
+    cohort_type: "admitted"
+    description: "6h features, vasopressor need 6h–30h (aligned), admitted patients"
+  
+  # Mechanical ventilation (aligned)
+  ed_w6_vent_24h_admitted:
+    window: "W6"
+    outcome: "vent_24h_from_w6"
+    cohort_type: "admitted"
+    description: "6h features, mechanical ventilation 6h–30h (aligned), admitted patients"
+  
+  # Renal replacement therapy (aligned)
+  ed_w24_rrt_24h_admitted:
+    window: "W24"
+    outcome: "rrt_24h_from_w24"
+    cohort_type: "admitted"
+    description: "24h features, RRT 24h–48h (aligned), admitted patients"
+
+# Phenotype 1: High-risk cardiac (combined cardiac outcomes)
+# This will be handled separately with custom SQL
+
+phenotypes:
+  cardiac_high_risk:
+    description: "High-risk cardiac phenotype (ACS, cardiac arrest, or death)"
+    outcomes:
+      - cardiac_arrest_hosp
+      - death_24h_from_w6
+    windows: ["W6", "W24"]
+    cohort_type: "admitted"
+  
+  mortality_all_windows:
+    description: "All mortality outcomes across feature windows"
+    outcomes:
+      - death_24h_from_w6
+      - death_48h_from_w24
+      - death_hosp
+    windows: ["W6", "W24"]
+    cohort_type: "all"

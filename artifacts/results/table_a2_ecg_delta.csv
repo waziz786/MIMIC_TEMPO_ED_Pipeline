@@ -1,0 +1,5 @@
+Outcome,Model,AUROC_clinical,AUROC_clinical_ECG,Delta_AUROC,AUPRC_clinical,AUPRC_clinical_ECG
+cardiac_arrest_hosp,LR,0.7990,0.8489,+0.0499,0.0423,0.0596
+cardiac_arrest_hosp,XGB,0.8699,0.8916,+0.0217,0.0855,0.1170
+acs_hosp,LR,0.8198,0.8367,+0.0169,0.1410,0.1537
+acs_hosp,XGB,0.8445,0.8693,+0.0248,0.1912,0.2343

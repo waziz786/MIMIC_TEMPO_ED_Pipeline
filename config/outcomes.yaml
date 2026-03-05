@@ -1,0 +1,146 @@
+# Outcome Set Definitions
+# ═══════════════════════════════════════════════════════════════════
+# All timed outcomes are PREDICTION-TIME-ALIGNED:
+#   hours_from_ed > P  AND  hours_from_ed <= P + H
+#   P = prediction time (1, 6, or 24), H = outcome horizon
+#
+# ICD/procedure-code outcomes are hospitalization-level (no timestamp).
+#
+# Arrival-anchored outcomes (e.g. icu_24h measured from t=0) have been
+# REMOVED from the pipeline.
+# ═══════════════════════════════════════════════════════════════════
+
+# ── Timed event types used in aligned outcomes ───────────────────
+event_types:
+  timed:
+    - ICU_ADMIT
+    - PRESSOR_START
+    - VENT_START
+    - RRT_START
+    - DEATH
+  icd_based:
+    - ACS
+    - PCI
+    - CABG
+    - CARDIAC_ARREST
+
+# ── Prediction-time-aligned outcome definitions ──────────────────
+# Naming convention: {event}_{horizon}_from_{window}
+# Each entry documents the SQL rule it maps to.
+
+outcome_sets:
+  # ── Composite Deterioration (all timed events) ─────────────────
+  deterioration_24h_from_w1:
+    description: "Composite deterioration 1h–25h (aligned to W1)"
+    window: W1
+    horizon_hours: 24
+    events: [ICU_ADMIT, PRESSOR_START, VENT_START, RRT_START, DEATH]
+
+  deterioration_24h_from_w6:
+    description: "Composite deterioration 6h–30h (aligned to W6)"
+    window: W6
+    horizon_hours: 24
+    events: [ICU_ADMIT, PRESSOR_START, VENT_START, RRT_START, DEATH]
+
+  deterioration_24h_from_w24:
+    description: "Composite deterioration 24h–48h (aligned to W24)"
+    window: W24
+    horizon_hours: 24
+    events: [ICU_ADMIT, PRESSOR_START, VENT_START, RRT_START, DEATH]
+
+  deterioration_48h_from_w1:
+    description: "Composite deterioration 1h–49h (aligned to W1)"
+    window: W1
+    horizon_hours: 48
+    events: [ICU_ADMIT, PRESSOR_START, VENT_START, RRT_START, DEATH]
+
+  deterioration_48h_from_w6:
+    description: "Composite deterioration 6h–54h (aligned to W6)"
+    window: W6
+    horizon_hours: 48
+    events: [ICU_ADMIT, PRESSOR_START, VENT_START, RRT_START, DEATH]
+
+  deterioration_48h_from_w24:
+    description: "Composite deterioration 24h–72h (aligned to W24)"
+    window: W24
+    horizon_hours: 48
+    events: [ICU_ADMIT, PRESSOR_START, VENT_START, RRT_START, DEATH]
+
+  # ── ICU aligned ────────────────────────────────────────────────
+  icu_24h_from_w1:
+    description: "ICU admission 1h–25h"
+    window: W1
+    horizon_hours: 24
+    events: [ICU_ADMIT]
+
+  icu_24h_from_w6:
+    description: "ICU admission 6h–30h"
+    window: W6
+    horizon_hours: 24
+    events: [ICU_ADMIT]
+
+  icu_24h_from_w24:
+    description: "ICU admission 24h–48h"
+    window: W24
+    horizon_hours: 24
+    events: [ICU_ADMIT]
+
+  icu_48h_from_w1:
+    description: "ICU admission 1h–49h"
+    window: W1
+    horizon_hours: 48
+    events: [ICU_ADMIT]
+
+  icu_48h_from_w6:
+    description: "ICU admission 6h–54h"
+    window: W6
+    horizon_hours: 48
+    events: [ICU_ADMIT]
+
+  icu_48h_from_w24:
+    description: "ICU admission 24h–72h"
+    window: W24
+    horizon_hours: 48
+    events: [ICU_ADMIT]
+
+  # ── Death aligned ──────────────────────────────────────────────
+  death_24h_from_w6:
+    description: "Mortality 6h–30h"
+    window: W6
+    horizon_hours: 24
+    events: [DEATH]
+
+  death_48h_from_w24:
+    description: "Mortality 24h–72h"
+    window: W24
+    horizon_hours: 48
+    events: [DEATH]
+
+  death_hosp:
+    description: "In-hospital mortality (any time during admission)"
+    horizon_hours: null
+    events: [DEATH]
+
+  # ── ICD/procedure-code outcomes (hospitalization-level) ────────
+  cardiac_arrest_hosp:
+    description: "Cardiac arrest during hospitalization (ICD-based, no timestamp)"
+    horizon_hours: null
+    events: [CARDIAC_ARREST]
+
+  acs_hosp:
+    description: "Acute coronary syndrome (ICD-based, no timestamp)"
+    horizon_hours: null
+    events: [ACS]
+
+  revasc_hosp:
+    description: "Coronary revascularization (ICD-based, no timestamp)"
+    horizon_hours: null
+    events: [PCI, CABG]
+
+  coronary_event_hosp:
+    description: "Any coronary event: ACS or revascularization"
+    horizon_hours: null
+    events: [ACS, PCI, CABG]
+
+# ── Default for quick analyses ───────────────────────────────────
+default_outcome: "deterioration_24h_from_w6"

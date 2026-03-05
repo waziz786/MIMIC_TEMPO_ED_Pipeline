@@ -1,0 +1,348 @@
+{
+  "n_samples": 75000,
+  "n_positives": 4785,
+  "n_matched_features": 32,
+  "n_w6_features": 39,
+  "n_w24_features": 40,
+  "part_a_matched": {
+    "n_features": 32,
+    "w6_naive": {
+      "n_features": 32,
+      "LR": {
+        "auroc_mean": 0.9024,
+        "auroc_std": 0.0022,
+        "auprc_mean": 0.4712,
+        "auprc_std": 0.0178,
+        "f1_mean": 0.3887,
+        "brier_mean": 0.1211
+      },
+      "GBM": {
+        "auroc_mean": 0.9323,
+        "auroc_std": 0.0029,
+        "auprc_mean": 0.6459,
+        "auprc_std": 0.0108,
+        "f1_mean": 0.5451,
+        "brier_mean": 0.0352
+      }
+    },
+    "w24_naive": {
+      "n_features": 32,
+      "LR": {
+        "auroc_mean": 0.9048,
+        "auroc_std": 0.002,
+        "auprc_mean": 0.4543,
+        "auprc_std": 0.0192,
+        "f1_mean": 0.3834,
+        "brier_mean": 0.1228
+      },
+      "GBM": {
+        "auroc_mean": 0.9602,
+        "auroc_std": 0.0018,
+        "auprc_mean": 0.7301,
+        "auprc_std": 0.0056,
+        "f1_mean": 0.6267,
+        "brier_mean": 0.0301
+      }
+    },
+    "w24_truncated": {
+      "n_features": 32,
+      "LR": {
+        "auroc_mean": 0.8782,
+        "auroc_std": 0.0037,
+        "auprc_mean": 0.428,
+        "auprc_std": 0.0135,
+        "f1_mean": 0.3428,
+        "brier_mean": 0.1371
+      },
+      "GBM": {
+        "auroc_mean": 0.9439,
+        "auroc_std": 0.0035,
+        "auprc_mean": 0.7096,
+        "auprc_std": 0.0114,
+        "f1_mean": 0.6213,
+        "brier_mean": 0.031
+      }
+    },
+    "leakage_lr_auroc": 0.0266,
+    "leakage_gbm_auroc": 0.0163,
+    "leakage_lr_auprc": 0.0263,
+    "leakage_gbm_auprc": 0.0205,
+    "leakage_lr_pct": 3.029,
+    "leakage_gbm_pct": 1.727,
+    "w6_vs_w24trunc_lr_pct": 2.756,
+    "w6_vs_w24trunc_gbm_pct": -1.229
+  },
+  "part_b_full_feature": {
+    "w6_naive": {
+      "n_features": 39,
+      "LR": {
+        "auroc_mean": 0.9036,
+        "auroc_std": 0.0027,
+        "auprc_mean": 0.4828,
+        "auprc_std": 0.0173,
+        "f1_mean": 0.3931,
+        "brier_mean": 0.1197
+      },
+      "GBM": {
+        "auroc_mean": 0.9322,
+        "auroc_std": 0.0026,
+        "auprc_mean": 0.6452,
+        "auprc_std": 0.0104,
+        "f1_mean": 0.5439,
+        "brier_mean": 0.0352
+      }
+    },
+    "w24_naive": {
+      "n_features": 40,
+      "LR": {
+        "auroc_mean": 0.9108,
+        "auroc_std": 0.0007,
+        "auprc_mean": 0.4818,
+        "auprc_std": 0.0183,
+        "f1_mean": 0.3988,
+        "brier_mean": 0.1175
+      },
+      "GBM": {
+        "auroc_mean": 0.9617,
+        "auroc_std": 0.0017,
+        "auprc_mean": 0.7431,
+        "auprc_std": 0.0063,
+        "f1_mean": 0.6432,
+        "brier_mean": 0.0292
+      }
+    },
+    "w24_truncated": {
+      "n_features": 40,
+      "LR": {
+        "auroc_mean": 0.8785,
+        "auroc_std": 0.0032,
+        "auprc_mean": 0.4285,
+        "auprc_std": 0.0133,
+        "f1_mean": 0.3431,
+        "brier_mean": 0.1368
+      },
+      "GBM": {
+        "auroc_mean": 0.9443,
+        "auroc_std": 0.0031,
+        "auprc_mean": 0.7088,
+        "auprc_std": 0.0085,
+        "f1_mean": 0.6193,
+        "brier_mean": 0.031
+      }
+    },
+    "leakage_lr_auroc": 0.0323,
+    "leakage_gbm_auroc": 0.0174,
+    "leakage_lr_pct": 3.677,
+    "leakage_gbm_pct": 1.843
+  },
+  "part_c_w6_truncation": {
+    "w6_naive": {
+      "n_features": 39,
+      "LR": {
+        "auroc_mean": 0.9036,
+        "auroc_std": 0.0027,
+        "auprc_mean": 0.4828,
+        "auprc_std": 0.0173,
+        "f1_mean": 0.3931,
+        "brier_mean": 0.1197
+      },
+      "GBM": {
+        "auroc_mean": 0.9322,
+        "auroc_std": 0.0026,
+        "auprc_mean": 0.6452,
+        "auprc_std": 0.0104,
+        "f1_mean": 0.5439,
+        "brier_mean": 0.0352
+      }
+    },
+    "w6_truncated": {
+      "n_features": 39,
+      "LR": {
+        "auroc_mean": 0.8894,
+        "auroc_std": 0.0037,
+        "auprc_mean": 0.4284,
+        "auprc_std": 0.0145,
+        "f1_mean": 0.3628,
+        "brier_mean": 0.1309
+      },
+      "GBM": {
+        "auroc_mean": 0.9226,
+        "auroc_std": 0.0033,
+        "auprc_mean": 0.5918,
+        "auprc_std": 0.0106,
+        "f1_mean": 0.496,
+        "brier_mean": 0.0378
+      }
+    },
+    "leakage_lr_auroc": 0.0142,
+    "leakage_gbm_auroc": 0.0096
+  },
+  "part_d_contamination": [
+    {
+      "feature": "sbp_std_6h",
+      "mean_abs_diff": 527.9202,
+      "pct_changed": 97.55
+    },
+    {
+      "feature": "time_to_first_lab_hours",
+      "mean_abs_diff": 377.9406,
+      "pct_changed": 73.75
+    },
+    {
+      "feature": "sbp_mean_6h",
+      "mean_abs_diff": 85.4719,
+      "pct_changed": 98.89
+    },
+    {
+      "feature": "hr_mean_6h",
+      "mean_abs_diff": 73.0265,
+      "pct_changed": 95.86
+    },
+    {
+      "feature": "lactate_first_6h",
+      "mean_abs_diff": 68.7177,
+      "pct_changed": 85.16
+    },
+    {
+      "feature": "platelet_first_6h",
+      "mean_abs_diff": 56.0217,
+      "pct_changed": 81.59
+    },
+    {
+      "feature": "rr_mean_6h",
+      "mean_abs_diff": 23.2982,
+      "pct_changed": 94.82
+    },
+    {
+      "feature": "spo2_mean_6h",
+      "mean_abs_diff": 18.6823,
+      "pct_changed": 88.92
+    },
+    {
+      "feature": "time_to_first_med_hours",
+      "mean_abs_diff": 6.0476,
+      "pct_changed": 31.49
+    },
+    {
+      "feature": "wbc_first_6h",
+      "mean_abs_diff": 4.668,
+      "pct_changed": 80.44
+    },
+    {
+      "feature": "temp_max_6h",
+      "mean_abs_diff": 4.591,
+      "pct_changed": 85.52
+    },
+    {
+      "feature": "sodium_first_6h",
+      "mean_abs_diff": 4.0573,
+      "pct_changed": 67.75
+    },
+    {
+      "feature": "hr_min_6h",
+      "mean_abs_diff": 3.8989,
+      "pct_changed": 85.5
+    },
+    {
+      "feature": "bicarbonate_first_6h",
+      "mean_abs_diff": 3.2599,
+      "pct_changed": 69.99
+    },
+    {
+      "feature": "creatinine_first_6h",
+      "mean_abs_diff": 1.7609,
+      "pct_changed": 67.63
+    },
+    {
+      "feature": "hr_max_6h",
+      "mean_abs_diff": 1.7212,
+      "pct_changed": 60.63
+    },
+    {
+      "feature": "hemoglobin_first_6h",
+      "mean_abs_diff": 1.574,
+      "pct_changed": 80.48
+    },
+    {
+      "feature": "sbp_min_6h",
+      "mean_abs_diff": 0.8855,
+      "pct_changed": 6.29
+    },
+    {
+      "feature": "potassium_first_6h",
+      "mean_abs_diff": 0.8679,
+      "pct_changed": 70.68
+    },
+    {
+      "feature": "spo2_min_6h",
+      "mean_abs_diff": 0.7427,
+      "pct_changed": 3.03
+    },
+    {
+      "feature": "sbp_max_6h",
+      "mean_abs_diff": 0.5152,
+      "pct_changed": 3.93
+    },
+    {
+      "feature": "rr_max_6h",
+      "mean_abs_diff": 0.5011,
+      "pct_changed": 3.62
+    },
+    {
+      "feature": "n_vitalsign_measurements_6h",
+      "mean_abs_diff": 0.3958,
+      "pct_changed": 19.46
+    },
+    {
+      "feature": "troponin_first_6h",
+      "mean_abs_diff": 0.1134,
+      "pct_changed": 95.09
+    },
+    {
+      "feature": "age_at_ed",
+      "mean_abs_diff": 0.0,
+      "pct_changed": 0.0
+    },
+    {
+      "feature": "gender",
+      "mean_abs_diff": 0.0,
+      "pct_changed": 0.0
+    },
+    {
+      "feature": "ed_los_hours",
+      "mean_abs_diff": 0.0,
+      "pct_changed": 0.0
+    },
+    {
+      "feature": "arrival_transport",
+      "mean_abs_diff": 0.0,
+      "pct_changed": 0.0
+    },
+    {
+      "feature": "race",
+      "mean_abs_diff": 0.0,
+      "pct_changed": 0.0
+    },
+    {
+      "feature": "is_hs_troponin_6h",
+      "mean_abs_diff": 0.0,
+      "pct_changed": 0.0
+    },
+    {
+      "feature": "prev_admits_1yr",
+      "mean_abs_diff": 0.0,
+      "pct_changed": 0.0
+    },
+    {
+      "feature": "prev_ed_visits_1yr",
+      "mean_abs_diff": 0.0,
+      "pct_changed": 0.0
+    }
+  ],
+  "part_e_negative_control": {
+    "naive_shuffled_auroc": 0.4985,
+    "trunc_shuffled_auroc": 0.4957,
+    "diff": 0.0028
+  },
+  "elapsed_min": 8.7
+}

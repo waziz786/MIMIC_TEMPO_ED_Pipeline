@@ -1,0 +1,283 @@
+{
+  "experiment": "temporal_leakage_demonstration",
+  "description": "Comparison of temporally isolated vs contaminated feature windows",
+  "methodology": {
+    "isolated": {
+      "feature_window": "[0-6h]",
+      "outcome_window": "[6-30h]",
+      "temporal_overlap": "0 hours",
+      "n_features": 53,
+      "n_samples": 100000
+    },
+    "contaminated": {
+      "feature_window": "[0-24h]",
+      "outcome_window": "[6-30h]",
+      "temporal_overlap": "18 hours",
+      "n_features": 53,
+      "n_samples": 100000
+    }
+  },
+  "models": {
+    "Logistic Regression": {
+      "isolated": {
+        "mean": {
+          "AUROC": 0.8641569980771422,
+          "AUPRC": 0.2890536911146886,
+          "Brier": 0.03333376166458876
+        },
+        "std": {
+          "AUROC": 0.004712177414552978,
+          "AUPRC": 0.009221939249060711,
+          "Brier": 0.0011790171858012536
+        },
+        "folds": [
+          {
+            "AUROC": 0.8734510026675908,
+            "AUPRC": 0.2923207463307294,
+            "Brier": 0.03211543040211406
+          },
+          {
+            "AUROC": 0.8621719075520834,
+            "AUPRC": 0.2908422947783648,
+            "Brier": 0.03298387593334345
+          },
+          {
+            "AUROC": 0.8628725280302417,
+            "AUPRC": 0.2904784917233013,
+            "Brier": 0.03493183675444134
+          },
+          {
+            "AUROC": 0.8618182551113045,
+            "AUPRC": 0.2997475890854583,
+            "Brier": 0.034499799759643235
+          },
+          {
+            "AUROC": 0.8604712970244904,
+            "AUPRC": 0.27187933365558925,
+            "Brier": 0.032137865473401715
+          }
+        ]
+      },
+      "contaminated": {
+        "mean": {
+          "AUROC": 0.9277671356543774,
+          "AUPRC": 0.39085524792093373,
+          "Brier": 0.02993554663192023
+        },
+        "std": {
+          "AUROC": 0.004048956244173602,
+          "AUPRC": 0.013582128256487207,
+          "Brier": 0.001250831988524039
+        },
+        "folds": [
+          {
+            "AUROC": 0.9348981993712862,
+            "AUPRC": 0.39224033801170477,
+            "Brier": 0.02873546498938802
+          },
+          {
+            "AUROC": 0.9291949544270834,
+            "AUPRC": 0.4086672520104736,
+            "Brier": 0.02912887979238702
+          },
+          {
+            "AUROC": 0.9233058986129841,
+            "AUPRC": 0.3836863928078455,
+            "Brier": 0.031778294829946256
+          },
+          {
+            "AUROC": 0.9263434177633516,
+            "AUPRC": 0.4003242373204698,
+            "Brier": 0.031095235739021922
+          },
+          {
+            "AUROC": 0.9250932080971817,
+            "AUPRC": 0.3693580194541749,
+            "Brier": 0.028939857808857914
+          }
+        ]
+      },
+      "leakage_effect": {
+        "auroc_gain": 0.06361013757723522,
+        "auprc_gain": 0.10180155680624514,
+        "brier_improvement": 0.003398215032668534,
+        "auroc_gain_pct": 6.361013757723521,
+        "auprc_gain_pct": 10.180155680624514
+      }
+    },
+    "Gradient Boosting": {
+      "isolated": {
+        "mean": {
+          "AUROC": 0.8922869807245201,
+          "AUPRC": 0.3269572787277356,
+          "Brier": 0.03198356973333856
+        },
+        "std": {
+          "AUROC": 0.005506133657547709,
+          "AUPRC": 0.016294195860296495,
+          "Brier": 0.0011364521286501388
+        },
+        "folds": [
+          {
+            "AUROC": 0.9028194557673664,
+            "AUPRC": 0.33793070486393917,
+            "Brier": 0.030683017110341188
+          },
+          {
+            "AUROC": 0.8903986653645833,
+            "AUPRC": 0.3331242983646438,
+            "Brier": 0.031440305363061194
+          },
+          {
+            "AUROC": 0.8922551283351983,
+            "AUPRC": 0.32181501788280004,
+            "Brier": 0.03374643521699115
+          },
+          {
+            "AUROC": 0.8880111652784066,
+            "AUPRC": 0.3440951136084471,
+            "Brier": 0.03284868862777435
+          },
+          {
+            "AUROC": 0.8879504888770452,
+            "AUPRC": 0.2978212589188478,
+            "Brier": 0.031199402348524922
+          }
+        ]
+      },
+      "contaminated": {
+        "mean": {
+          "AUROC": 0.9436131480576581,
+          "AUPRC": 0.47088075757419184,
+          "Brier": 0.02757240496707562
+        },
+        "std": {
+          "AUROC": 0.003914910858039547,
+          "AUPRC": 0.01213904813990383,
+          "Brier": 0.001329692262419994
+        },
+        "folds": [
+          {
+            "AUROC": 0.9497401493236718,
+            "AUPRC": 0.4702621327610956,
+            "Brier": 0.026227434621006695
+          },
+          {
+            "AUROC": 0.9464481770833335,
+            "AUPRC": 0.4901532860242936,
+            "Brier": 0.02678886665856455
+          },
+          {
+            "AUROC": 0.9407829127161682,
+            "AUPRC": 0.45518166574748026,
+            "Brier": 0.02963084691643934
+          },
+          {
+            "AUROC": 0.9420042019026028,
+            "AUPRC": 0.4769579019069645,
+            "Brier": 0.02865096410290587
+          },
+          {
+            "AUROC": 0.9390902992625138,
+            "AUPRC": 0.46184880143112517,
+            "Brier": 0.02656391253646166
+          }
+        ]
+      },
+      "leakage_effect": {
+        "auroc_gain": 0.051326167333137995,
+        "auprc_gain": 0.14392347884645623,
+        "brier_improvement": 0.004411164766262941,
+        "auroc_gain_pct": 5.1326167333137995,
+        "auprc_gain_pct": 14.392347884645623
+      }
+    }
+  },
+  "leakage_effect": {},
+  "feature_importance": {
+    "isolated_top10": [
+      {
+        "feature": "w6_n_vitalsign_measurements_6h",
+        "importance": 0.3685400461855709
+      },
+      {
+        "feature": "w6_time_to_first_med_hours",
+        "importance": 0.05743608833626512
+      },
+      {
+        "feature": "w6_rr_mean_6h",
+        "importance": 0.05714574679370867
+      },
+      {
+        "feature": "w6_sbp_min_6h",
+        "importance": 0.048567814202164473
+      },
+      {
+        "feature": "w6_rr_max_6h",
+        "importance": 0.031174967926343874
+      },
+      {
+        "feature": "w6_time_to_first_lab_hours",
+        "importance": 0.02877345228745483
+      },
+      {
+        "feature": "w6_hr_min_6h",
+        "importance": 0.02719436868080211
+      },
+      {
+        "feature": "w6_missing_time_to_first_lab_hours",
+        "importance": 0.02461428893558742
+      },
+      {
+        "feature": "w6_lactate_first_6h",
+        "importance": 0.022727527527150092
+      },
+      {
+        "feature": "w6_hr_mean_6h",
+        "importance": 0.020108103383841988
+      }
+    ],
+    "contaminated_top10": [
+      {
+        "feature": "w24_missing_lactate_last_24h",
+        "importance": 0.1570156957745375
+      },
+      {
+        "feature": "w24_time_to_first_lab_hours",
+        "importance": 0.11589098744423407
+      },
+      {
+        "feature": "w24_n_vitalsign_measurements_24h",
+        "importance": 0.1082624058567689
+      },
+      {
+        "feature": "w24_missing_lactate_first_24h",
+        "importance": 0.06754394880581266
+      },
+      {
+        "feature": "w24_bicarbonate_first_24h",
+        "importance": 0.04737771978463304
+      },
+      {
+        "feature": "w24_time_to_first_med_hours",
+        "importance": 0.04135201007786197
+      },
+      {
+        "feature": "w24_wbc_last_24h",
+        "importance": 0.03455976752970169
+      },
+      {
+        "feature": "w24_lactate_last_24h",
+        "importance": 0.033804880732197555
+      },
+      {
+        "feature": "w24_sbp_min_24h",
+        "importance": 0.03371104842780073
+      },
+      {
+        "feature": "w24_rr_mean_24h",
+        "importance": 0.03007370736358642
+      }
+    ]
+  }
+}

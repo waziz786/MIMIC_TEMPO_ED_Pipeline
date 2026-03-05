@@ -1,0 +1,94 @@
+{
+  "tables": {
+    "tmp_features_w1": {
+      "window": "W1",
+      "n_columns_actual": 19,
+      "n_columns_expected": 19,
+      "missing_expected_columns": [],
+      "extra_columns": [],
+      "actual_columns_sample": [
+        "stay_id",
+        "age_at_ed",
+        "gender",
+        "arrival_transport",
+        "race",
+        "chiefcomplaint",
+        "temp_w1",
+        "hr_w1",
+        "rr_w1",
+        "spo2_w1",
+        "sbp_w1",
+        "dbp_w1",
+        "triage_pain",
+        "triage_acuity",
+        "shock_index_w1",
+        "map_w1",
+        "missing_temp_w1",
+        "missing_hr_w1",
+        "missing_sbp_w1"
+      ]
+    },
+    "tmp_features_w6": {
+      "window": "W6",
+      "n_columns_actual": 40,
+      "n_columns_expected": 41,
+      "missing_expected_columns": [
+        "is_hs_troponin_6h"
+      ],
+      "extra_columns": [],
+      "actual_columns_sample": [
+        "stay_id",
+        "age_at_ed",
+        "gender",
+        "arrival_transport",
+        "race",
+        "sbp_min_6h",
+        "sbp_max_6h",
+        "sbp_mean_6h",
+        "sbp_std_6h",
+        "dbp_min_6h",
+        "hr_min_6h",
+        "hr_max_6h",
+        "hr_mean_6h",
+        "hr_std_6h",
+        "rr_max_6h",
+        "rr_mean_6h",
+        "spo2_min_6h",
+        "spo2_mean_6h",
+        "temp_max_6h",
+        "temp_min_6h"
+      ]
+    },
+    "tmp_features_w24": {
+      "window": "W24",
+      "n_columns_actual": 41,
+      "n_columns_expected": 42,
+      "missing_expected_columns": [
+        "is_hs_troponin_24h"
+      ],
+      "extra_columns": [],
+      "actual_columns_sample": [
+        "stay_id",
+        "age_at_ed",
+        "gender",
+        "arrival_transport",
+        "race",
+        "sbp_min_24h",
+        "sbp_max_24h",
+        "sbp_mean_24h",
+        "sbp_std_24h",
+        "hr_min_24h",
+        "hr_max_24h",
+        "hr_mean_24h",
+        "rr_max_24h",
+        "rr_mean_24h",
+        "spo2_min_24h",
+        "spo2_mean_24h",
+        "temp_max_24h",
+        "n_vitalsign_measurements_24h",
+        "chiefcomplaint",
+        "lactate_first_24h"
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+Feature_Index,Feature_Base_Name,Category,Data_Type,Description,W1_Column_Name,W6_Column_Name,Isolated_Window,Contaminated_Window,Measurement_Type
+1,sbp,Vitals,Numeric,Systolic Blood Pressure,w1_sbp,w6_sbp,0-1h,0-6h,Point-value
+2,dbp,Vitals,Numeric,Diastolic Blood Pressure,w1_dbp,w6_dbp,0-1h,0-6h,Point-value
+3,hr,Vitals,Numeric,Heart Rate,w1_hr,w6_hr,0-1h,0-6h,Point-value
+4,rr,Vitals,Numeric,Respiratory Rate,w1_rr,w6_rr,0-1h,0-6h,Point-value
+5,spo2,Vitals,Numeric,O2 Saturation,w1_spo2,w6_spo2,0-1h,0-6h,Point-value
+6,temp,Vitals,Numeric,Temperature,w1_temp,w6_temp,0-1h,0-6h,Point-value
+7,map,Vitals,Numeric,Mean Arterial Pressure,w1_map,w6_map,0-1h,0-6h,Calculated
+8,shock_index,Vitals,Numeric,Shock Index,w1_shock_index,w6_shock_index,0-1h,0-6h,Calculated
+9,ed_los_hours,Time,Numeric,ED Length of Stay (hours),w1_ed_los_hours,w6_ed_los_hours,0-1h,0-6h,Duration
+10,ed_los_hours_numeric,Time,Numeric,ED LOS (numeric),w1_ed_los_hours_numeric,w6_ed_los_hours_numeric,0-1h,0-6h,Duration
+11,age_at_ed,Demographics,Numeric,Age at ED Arrival,w1_age_at_ed,w6_age_at_ed,0-1h,0-6h,Static
+
+EXPERIMENT_DESIGN
+Experiment,Condition,Features_Count,Feature_Window,Outcome_Window,Temporal_Overlap,Model_Baseline
+W1_vs_W6,ISOLATED,11,0-1h,0-30h,0 hours,0.9972 AUROC (LR)
+W1_vs_W6,CONTAMINATED,11,0-6h,0-30h,5 hours,0.9106 AUROC (LR)
+W1_vs_W6,ISOLATED,11,0-1h,0-30h,0 hours,0.9983 AUROC (GBM)
+W1_vs_W6,CONTAMINATED,11,0-6h,0-30h,5 hours,0.9394 AUROC (GBM)
+
+LEAKAGE_EFFECT_ANALYSIS
+Model,AUROC_W1_Isolated,AUROC_W6_Contaminated,AUROC_Difference,Percent_Change,Interpretation
+Logistic_Regression,0.9972,0.9106,-0.0866,-8.69%,W6 performs WORSE - missing data impact dominates
+Gradient_Boosting,0.9983,0.9394,-0.0589,-5.90%,W6 performs WORSE - missing data is primary factor
+
+MISSING_DATA_ANALYSIS
+Window,Features,Missing_Count,Missing_Percentage,Impact
+W1_0-1h,11,95296,2.0%,Low missing rate
+W6_0-6h,11,47874,8.7%,High missing rate (4.35x increase)
+
+KEY_FINDINGS
+1. W6 features have significantly more missing data (8.7% vs 2.0%)
+2. Missing data impact overwhelms any temporal leakage benefit
+3. If we exclude missing-data samples: W6 might show leakage signal
+4. Recommendation: Conduct subset analysis with complete-case data only
+5. Conclusion: Data quality (missingness) is more important than temporal leakage in this scenario
