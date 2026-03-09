@@ -1,6 +1,6 @@
 # Quick Start: Loading MIMIC-IV, MIMIC-IV-ED, and ECG Data into PostgreSQL
 
-**For first-time users who have downloaded data from PhysioNet**
+**For first-time users who have downloaded data from PhysioNet (mkae sure to download the RIGHT dataset)**
 
 ---
 
@@ -8,10 +8,10 @@
 
 ✅ PostgreSQL 18+ installed and running  
 ✅ Data downloaded and extracted:
-- `MIMIC-IV v3.1` → extracted to local folder
+- `MIMIC-IV v3.1` → extracted to local folder 
 - `MIMIC-IV-ED v2.2` → extracted to local folder  
-- `MIMIC IV ECG DATA` → folder with `record_list.csv` and `machine_measurements.csv`
-
+- `MIMIC-IV-ECG: Diagnostic Electrocardiogram Matched Subset` → folder with `record_list.csv` and `machine_measurements.csv`
+ECG data is open access whereas the other two require credential access
 ---
 
 ## Step 1: Set Up Your Environment
@@ -73,7 +73,7 @@ COPY 6364488
 ... (continues for ~20+ tables)
 ```
 
-⏳ **Takes 30-60 minutes** (depending on disk speed, may even take longer)
+ **Takes 30-60 minutes** (depending on disk speed, may even take longer)
 
 ### Step 3c: (Optional) Add Constraints and Indexes
 
@@ -104,7 +104,7 @@ $MIMIC_ED_PATH = "C:\Users\YourName\Downloads\mimic-iv-ed-2.2\mimic-iv-ed-2.2"
 & "C:\Program Files\PostgreSQL\18\bin\psql" -U postgres -d mimiciv -v ON_ERROR_STOP=1 -v mimic_data_dir="$MIMIC_ED_PATH" -f mimic-code\mimic-iv-ed\buildmimic\postgres\load.sql
 ```
 
-⏳ **Takes 10-15 minutes**
+ **Takes 10-15 minutes**
 
 ---
 
@@ -164,7 +164,7 @@ $ECG_PATH = "C:\Users\YourName\Downloads\MIMIC IV ECG DATA"
 & "C:\Program Files\PostgreSQL\18\bin\psql" -U postgres -d mimiciv -c "\COPY mimiciv_ecg.machine_measurements FROM '$ECG_PATH\machine_measurements.csv' WITH (FORMAT csv, HEADER true);"
 ```
 
-⏳ **Takes 5-7 minutes**
+ **Takes 5-7 minutes**
 
 ---
 
@@ -247,7 +247,7 @@ Test-Path "C:\Users\YourName\Downloads\MIMIC IV ECG DATA"
 ```
 
 ### "relation already exists"
-Drop and recreate ( very careful - deletes data):
+Drop and recreate ( **very careful - deletes data**):
 ```powershell
 & "C:\Program Files\PostgreSQL\18\bin\psql" -U postgres -d mimiciv -c "DROP SCHEMA mimiciv_hosp CASCADE;"
 ```
@@ -290,4 +290,4 @@ $env:PGPASSWORD = "your_password"
 ---
 
  
-**For:** First-time MIMIC-IV users with cardiac deterioration pipeline
+**For:** First-time MIMIC-IV users using the pipeline
