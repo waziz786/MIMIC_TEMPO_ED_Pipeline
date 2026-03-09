@@ -11,8 +11,7 @@
 - `MIMIC-IV v3.1` → extracted to local folder 
 - `MIMIC-IV-ED v2.2` → extracted to local folder  
 - `MIMIC-IV-ECG: Diagnostic Electrocardiogram Matched Subset` → folder with `record_list.csv` and `machine_measurements.csv`
-
-'ECG data is open access whereas the other two require credential access'
+(ECG data is open access whereas the other two require credential access)
 ---
 
 ## Step 1: Set Up Your Environment
