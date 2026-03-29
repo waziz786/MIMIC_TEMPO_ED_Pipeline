@@ -1,4 +1,4 @@
-# MIMIC_ED_Pipeline
+# TEMPO_ED_MIMIC_Pipeline
 
 A comprehensive framework for extracting, processing MIMIC-IV emergency department patient data to geenrate temporally aligned and analysis ready datatset taht can  predict cardiac deterioration, ICU admission, and mortality etc...
 
