@@ -1,6 +1,6 @@
 # TEMPO_ED_MIMIC_Pipeline
 
-A comprehensive framework for extracting, processing MIMIC-IV emergency department patient data to geenrate temporally aligned and analysis ready datatset taht can be used to predict cardiac deterioration, ICU admission, and mortality etc...
+A comprehensive framework for extracting, processing MIMIC-IV emergency department patient data to geenrate temporally aligned and analysis ready datatset that can be used to predict cardiac deterioration, ICU admission, and mortality etc...
 
 ## Quick Start
 
@@ -81,7 +81,7 @@ See [LICENSE](docs/LICENSE) for details.
 
 If you use this pipeline in your research, please cite:
 ```
-[TBA]
+W. A. Sulaiman et al., "TEMPO-ED: A Temporally Aligned MIMIC-IV Emergency Department Pipeline for Multi-Outcome Prediction," 2026 IEEE 39th International Symposium on Computer-Based Medical Systems (CBMS), Limassol, Cyprus, 2026, pp. 1642-1645, doi: 10.1109/CBMS69103.2026.00322. keywords: {Pipelines;MIMICs;Windows;Modeling;Printing;Machine learning;Timing;Structured Query Language;Electrocardiography;Machining;Machine Learning;MIMIC-IV-ED;Event-log;Temporal Leakage;Emergency Department;Clinical deterioration},
 ```
 
 ## Contact
